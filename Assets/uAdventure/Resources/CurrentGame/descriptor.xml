@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <game-descriptor versionNumber="0">
-  <title>Adventure title</title>
+  <title>Dia tras dia</title>
   <description>
   </description>
   <application-identifier>com.DefaultCompany.Myproject</application-identifier>
   <configuration keepShowing="no" keyboard-navigation="disabled" defaultClickAction="showDetails" perspective="regular" dragBehaviour="considerNonTargets" show-save-load="yes" show-reset="yes" autosave="no" save-on-suspend="no" restore-after-open="no">
-    <gui type="contextual" inventoryPosition="top_bottom" />
+    <gui type="contextual" inventoryPosition="bottom" />
     <mode playerTransparent="yes" />
     <graphics mode="windowed" />
   </configuration>

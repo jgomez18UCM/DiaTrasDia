@@ -99,6 +99,9 @@
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
+    <objects>
+      <object-ref idTarget="Espejo" x="385" y="773" scale="0.2407269" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
   </scene>
   <scene id="Calle" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -118,7 +121,7 @@
       <character-ref idTarget="Shaggy" x="114" y="327" scale="0.2076169" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
-  <scene id="Trabajo" hideInventory="no" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -127,6 +130,52 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+  </scene>
+  <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/47ae9367b1a92f6c3fd13848f081a17e.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="Tshirt" x="121" y="497" scale="0.2276845" glow="no" layer="3" hasInfluenceArea="no" />
+      <object-ref idTarget="Mannequin" x="604" y="1172" scale="2.08727" glow="no" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtWhite" x="-290" y="493" scale="0.5897488" glow="no" layer="4" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtDare" x="95" y="922" scale="1.049903" glow="no" layer="5" hasInfluenceArea="no" />
+      <object-ref idTarget="Skirt" x="1203" y="438" scale="0.6570418" glow="no" layer="1" hasInfluenceArea="no" />
+      <object-ref idTarget="Pants" x="1520" y="584" scale="0.4730556" glow="no" layer="2" hasInfluenceArea="no" />
+    </objects>
+    <active-areas>
+      <active-area id="FondoTopParts" rectangular="yes" x="-640" y="27" width="988" height="915" hasInfluenceArea="yes" influenceX="0" influenceY="0" influenceWidth="1030" influenceHeight="664" behaviour="normal">
+        <condition>
+          <greater-than var="Top" value="0" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+      </active-area>
+      <active-area id="FondoBottomParts" rectangular="yes" x="956" y="35" width="1007" height="886" hasInfluenceArea="no" behaviour="normal">
+        <condition>
+          <greater-than var="Bottom" value="0" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+      </active-area>
+    </active-areas>
   </scene>
   <graph-conversation id="Conversacion">
     <dialogue-node nodeindex="0" editor-x="172" editor-y="169">
@@ -142,7 +191,7 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" question="Q1" keepShowing="yes" preListening="yes" editor-x="481" editor-y="453" x="481" y="453">
+    <option-node nodeindex="1" question="Q1" keepShowing="yes" preListening="yes" editor-x="535" editor-y="280" x="535" y="280">
       <speak-player>
         <text>Menos</text>
         <resources name="No name" />
@@ -156,7 +205,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="996" editor-y="468">
+    <dialogue-node nodeindex="2" editor-x="914" editor-y="250">
       <speak-char idTarget="Shaggy">
         <resources name="No name" />
         <text>Me la pela menos</text>
@@ -164,7 +213,7 @@
       <condition />
       <end-conversation />
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="1021" editor-y="650">
+    <dialogue-node nodeindex="3" editor-x="923" editor-y="441">
       <speak-char idTarget="Shaggy">
         <resources name="No name" />
         <text>Me la pela mas</text>
@@ -183,4 +232,275 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="MenuEspejo">
+    <dialogue-node nodeindex="0" editor-x="11" editor-y="108">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Cambiarme de ropa?</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="525" editor-y="106" x="525" y="106">
+      <speak-player>
+        <text>Si</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>No</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="892" editor-y="108">
+      <speak-player>
+        <resources name="No name" />
+        <text>Si, voy a cambiarme</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Ropa" x="400" y="450" transitionTime="2" transitionType="5" guid="9c989a3b-3f90-4e68-8b7a-81a8a8710cd9" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="913" editor-y="321">
+      <speak-player>
+        <resources name="No name" />
+        <text>No, ahora no me apetece</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <object id="Espejo" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/mirror-frame-favourites-smzhh-deviantart-32.png" />
+      <asset type="icon" uri="assets/icon/mirror-frame-favourites-smzhh-deviantart-32.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="MenuEspejo" guid="2f9539a0-140a-487f-a6a3-5139e4e52ab8" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="Tshirt" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/6298b026a65cf80bcf9dce061e9b79c9.png" />
+      <asset type="icon" uri="assets/icon/6298b026a65cf80bcf9dce061e9b79c9.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="1" guid="41aecf2c-a7f6-4240-b10f-c5b0de6bde31" />
+          <condition />
+          <move-object idTarget="Tshirt" x="577" y="731" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="0108244a-f049-4447-a75a-59c945051b9c" />
+          <condition />
+        </effect>
+      </drag-to>
+      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <greater-than var="Top" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="Tshirt" x="121" y="497" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="60e235ce-244a-4ed4-bab8-6432627376f0" />
+          <condition />
+          <set-value var="Top" value="0" guid="0431bad3-f3ca-4909-bfeb-e9d7e9aafd99" />
+          <condition />
+        </effect>
+      </drag-to>
+    </actions>
+  </object>
+  <object id="Mannequin" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Mannequin.png" />
+      <asset type="icon" uri="assets/icon/Mannequin.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="TShirtWhite" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/580b57fbd9996e24bc43bf7a.png" />
+      <asset type="icon" uri="assets/icon/580b57fbd9996e24bc43bf7a.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="1" guid="796f0679-0abc-4c35-b453-d7878003031d" />
+          <condition />
+          <move-object idTarget="TShirtWhite" x="580" y="724" scale="0.5897488" animated="no" translateSpeed="1" scaleSpeed="1" guid="afd62b8f-25bb-4b5c-ba3f-cb368ed07bea" />
+          <condition />
+        </effect>
+      </drag-to>
+      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <greater-than var="Top" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="TShirtWhite" x="-290" y="493" scale="1" animated="no" translateSpeed="1" scaleSpeed="1" guid="ab1c2c96-6df7-4bd9-ba7f-25fb5de0a6a3" />
+          <condition />
+          <set-value var="Top" value="0" guid="ec53782e-9a97-456a-a623-f8eee822d80e" />
+          <condition />
+        </effect>
+      </drag-to>
+    </actions>
+  </object>
+  <object id="TShirtDare" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Dare_tshirt.png" />
+      <asset type="icon" uri="assets/icon/Dare_tshirt.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="1" guid="6d6fe404-04b6-40b5-afee-873383126eb4" />
+          <condition />
+          <move-object idTarget="TShirtDare" x="590" y="679" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <condition />
+        </effect>
+      </drag-to>
+      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <greater-than var="Top" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="TShirtDare" x="95" y="922" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <condition />
+          <set-value var="Top" value="0" guid="9ee7fb4a-2930-480c-9014-19137973d42c" />
+          <condition />
+        </effect>
+      </drag-to>
+    </actions>
+  </object>
+  <object id="Skirt" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Short-Skirt-PNG.png" />
+      <asset type="icon" uri="assets/icon/Short-Skirt-PNG.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <equals var="Bottom" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Bottom" value="1" guid="6d6fe404-04b6-40b5-afee-873383126eb4" />
+          <condition />
+          <move-object idTarget="Skirt" x="585" y="920" scale="0.6570418" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <condition />
+        </effect>
+      </drag-to>
+      <drag-to idTarget="FondoBottomParts" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <greater-than var="Bottom" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="Skirt" x="1203" y="438" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <condition />
+          <set-value var="Bottom" value="0" guid="9ee7fb4a-2930-480c-9014-19137973d42c" />
+          <condition />
+        </effect>
+      </drag-to>
+    </actions>
+  </object>
+  <object id="Pants" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Trouser-Free-Download-PNG.png" />
+      <asset type="icon" uri="assets/icon/Trouser-Free-Download-PNG.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <equals var="Bottom" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Bottom" value="1" guid="6d6fe404-04b6-40b5-afee-873383126eb4" />
+          <condition />
+          <move-object idTarget="Pants" x="580" y="1120" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <condition />
+        </effect>
+      </drag-to>
+      <drag-to idTarget="FondoBottomParts" needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <greater-than var="Bottom" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="Pants" x="1520" y="584" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <condition />
+          <set-value var="Bottom" value="0" guid="9ee7fb4a-2930-480c-9014-19137973d42c" />
+          <condition />
+        </effect>
+      </drag-to>
+    </actions>
+  </object>
 </eAdventure>
