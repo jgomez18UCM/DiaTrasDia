@@ -95,8 +95,16 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <equals var="Bottom" value="1" />
+          <equals var="Top" value="1" />
+        </condition>
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
+          <condition />
+        </not-effect>
       </exit>
     </exits>
     <objects>
@@ -140,6 +148,11 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="720" y="1063" width="198" height="100" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" />
+      </exit>
+    </exits>
     <objects>
       <object-ref idTarget="Tshirt" x="121" y="497" scale="0.2276845" glow="no" layer="3" hasInfluenceArea="no" />
       <object-ref idTarget="Mannequin" x="604" y="1172" scale="2.08727" glow="no" layer="0" hasInfluenceArea="no" />
@@ -147,6 +160,7 @@
       <object-ref idTarget="TShirtDare" x="95" y="922" scale="1.049903" glow="no" layer="5" hasInfluenceArea="no" />
       <object-ref idTarget="Skirt" x="1203" y="438" scale="0.6570418" glow="no" layer="1" hasInfluenceArea="no" />
       <object-ref idTarget="Pants" x="1520" y="584" scale="0.4730556" glow="no" layer="2" hasInfluenceArea="no" />
+      <object-ref idTarget="Boton" x="819" y="1167" scale="0.2851888" glow="no" layer="6" hasInfluenceArea="no" />
     </objects>
     <active-areas>
       <active-area id="FondoTopParts" rectangular="yes" x="-640" y="27" width="988" height="915" hasInfluenceArea="yes" influenceX="0" influenceY="0" influenceWidth="1030" influenceHeight="664" behaviour="normal">
@@ -272,6 +286,34 @@
       <speak-player>
         <resources name="No name" />
         <text>No, ahora no me apetece</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="NoSalir">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>No debería de salir de casa sin vestirme</text>
+      </speak-player>
+      <condition>
+        <equals var="Bottom" value="0" />
+        <equals var="Top" value="0" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>* Haz click en el espejo para vestirte *</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Prueba">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola</text>
       </speak-player>
       <condition />
       <end-conversation />
@@ -502,5 +544,19 @@
         </effect>
       </drag-to>
     </actions>
+  </object>
+  <object id="Boton" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="Boton">
+      <asset type="image" uri="assets/image/Exit.jpg" />
+      <asset type="icon" uri="assets/icon/Exit.jpg" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
   </object>
 </eAdventure>
