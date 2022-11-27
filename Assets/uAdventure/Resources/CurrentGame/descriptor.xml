@@ -10,7 +10,7 @@
     <graphics mode="windowed" />
   </configuration>
   <extension-objects>
-    <tracker rawCopy="yes" storageType="LOCAL" traceFormat="CSV" host="" trackingCode="" flushInterval="3" debug="no" />
+    <tracker rawCopy="no" storageType="LOCAL" traceFormat="XAPI" host="" trackingCode="" flushInterval="3" debug="no" />
   </extension-objects>
   <contents>
     <chapter path="chapter1.xml">

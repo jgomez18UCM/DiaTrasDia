@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment> Project Configuration </comment>
-<entry key="Chapter0.Casa.X">663</entry>
-<entry key="Chapter0.Casa.Y">28</entry>
-<entry key="Chapter0.Trabajo.X">107</entry>
-<entry key="Chapter0.Trabajo.Y">85</entry>
-<entry key="Chapter0.Calle.X">401</entry>
-<entry key="Chapter0.Calle.Y">131</entry>
-<entry key="Chapter0.Ropa.X">403</entry>
-<entry key="Chapter0.Ropa.Y">296</entry>
+<entry key="Chapter0.Casa.X">551</entry>
+<entry key="Chapter0.Casa.Y">96</entry>
+<entry key="Chapter0.Trabajo.X">124</entry>
+<entry key="Chapter0.Trabajo.Y">8</entry>
+<entry key="Chapter0.Calle.X">385</entry>
+<entry key="Chapter0.Calle.Y">-23</entry>
+<entry key="Chapter0.Ropa.X">1013</entry>
+<entry key="Chapter0.Ropa.Y">113</entry>
+<entry key="Chapter0.Calle2.X">333</entry>
+<entry key="Chapter0.Calle2.Y">123</entry>
+<entry key="Chapter0.Supermercado.X">97</entry>
+<entry key="Chapter0.Supermercado.Y">186</entry>
+<entry key="Chapter0.Calle3.X">347</entry>
+<entry key="Chapter0.Calle3.Y">285</entry>
+<entry key="Chapter0.Bar.X">68</entry>
+<entry key="Chapter0.Bar.Y">346</entry>
 </properties>
 
