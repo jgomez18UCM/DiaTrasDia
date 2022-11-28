@@ -250,8 +250,8 @@
       <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <condition>
-          <equals var="Bottom" value="0" />
-          <inactive flag="Top" />
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
           <inactive flag="ExitWork" />
         </condition>
         <not-effect>
@@ -331,8 +331,12 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="720" y="1063" width="198" height="100" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="1090" y="713" width="198" height="100" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+        </condition>
       </exit>
     </exits>
     <objects>
@@ -343,34 +347,6 @@
       <object-ref idTarget="Skirt" x="1203" y="438" scale="0.6570418" glow="no" layer="1" hasInfluenceArea="no" />
       <object-ref idTarget="Pants" x="1520" y="584" scale="0.4730556" glow="no" layer="2" hasInfluenceArea="no" />
     </objects>
-    <active-areas>
-      <active-area id="FondoTopParts" rectangular="yes" x="-640" y="27" width="988" height="915" hasInfluenceArea="yes" influenceX="0" influenceY="0" influenceWidth="1030" influenceHeight="664" behaviour="normal">
-        <condition>
-          <active flag="a" />
-        </condition>
-        <description>
-          <name>
-          </name>
-          <brief>
-          </brief>
-          <detailed>
-          </detailed>
-        </description>
-      </active-area>
-      <active-area id="FondoBottomParts" rectangular="yes" x="956" y="35" width="1007" height="886" hasInfluenceArea="no" behaviour="normal">
-        <condition>
-          <active flag="a" />
-        </condition>
-        <description>
-          <name>
-          </name>
-          <brief>
-          </brief>
-          <detailed>
-          </detailed>
-        </description>
-      </active-area>
-    </active-areas>
   </scene>
   <scene id="Calle_Super" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -563,14 +539,14 @@
       </speak-player>
       <condition>
         <equals var="Bottom" value="0" />
-        <active flag="Top" />
+        <equals var="Top" value="0" />
       </condition>
       <speak-player>
         <resources name="No name" />
         <text>* Haz click en el espejo para vestirte *</text>
       </speak-player>
       <condition>
-        <inactive flag="Top" />
+        <equals var="Top" value="0" />
         <equals var="Bottom" value="0" />
         <inactive flag="ExitWork" />
       </condition>
@@ -816,44 +792,6 @@
       </use>
     </actions>
   </object>
-  <object id="Tshirt" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
-    <resources name="No name">
-      <asset type="image" uri="assets/image/6298b026a65cf80bcf9dce061e9b79c9.png" />
-      <asset type="icon" uri="assets/icon/6298b026a65cf80bcf9dce061e9b79c9.png" />
-    </resources>
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-    <actions>
-      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
-        <condition>
-          <inactive flag="Top" />
-        </condition>
-        <effect>
-          <activate flag="Top" guid="1111d29b-ccbe-4822-8286-d603f34c434c" />
-          <condition />
-          <move-object idTarget="Tshirt" x="577" y="731" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="0108244a-f049-4447-a75a-59c945051b9c" />
-          <condition />
-        </effect>
-      </drag-to>
-      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
-        <condition>
-          <active flag="a" />
-        </condition>
-        <effect>
-          <move-object idTarget="Tshirt" x="121" y="497" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="60e235ce-244a-4ed4-bab8-6432627376f0" />
-          <condition />
-          <deactivate flag="a" guid="03d91e0b-2421-41c4-aa09-4b20e6dc5adf" />
-          <condition />
-        </effect>
-      </drag-to>
-    </actions>
-  </object>
   <object id="Mannequin" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Mannequin.png" />
@@ -868,7 +806,45 @@
       </detailed>
     </description>
   </object>
-  <object id="TShirtWhite" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="Tshirt" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/6298b026a65cf80bcf9dce061e9b79c9.png" />
+      <asset type="icon" uri="assets/icon/6298b026a65cf80bcf9dce061e9b79c9.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="1" guid="4afc89a9-17e4-4c98-a545-9b6466ceb192" />
+          <condition />
+          <move-object idTarget="Tshirt" x="577" y="731" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="bf9c03dc-96e3-440a-9b8d-23da4472d0d0" />
+          <condition />
+        </effect>
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <not-equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <move-object idTarget="Tshirt" x="121" y="497" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="f3b5d016-8e75-46ef-bcae-3d1dd959f269" />
+          <condition />
+          <set-value var="Top" value="0" guid="9e1b3f56-202b-4d7a-923b-0fdaacb7f4a7" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="TShirtWhite" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/580b57fbd9996e24bc43bf7a.png" />
       <asset type="icon" uri="assets/icon/580b57fbd9996e24bc43bf7a.png" />
@@ -882,31 +858,31 @@
       </detailed>
     </description>
     <actions>
-      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <inactive flag="Top" />
+          <equals var="Top" value="0" />
         </condition>
         <effect>
-          <activate flag="Top" guid="dbdd3d9c-8d7a-42a7-b2e7-95fde9efbbfd" />
+          <set-value var="Top" value="1" guid="ae672e4f-cb45-47a2-b386-5ecdf0d4920c" />
           <condition />
-          <move-object idTarget="TShirtWhite" x="580" y="724" scale="0.5897488" animated="no" translateSpeed="1" scaleSpeed="1" guid="afd62b8f-25bb-4b5c-ba3f-cb368ed07bea" />
+          <move-object idTarget="TShirtWhite" x="580" y="724" scale="0.5897488" animated="no" translateSpeed="1" scaleSpeed="1" guid="fb9380b3-018d-4e4d-b991-95faa0ec1616" />
           <condition />
         </effect>
-      </drag-to>
-      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="Top" />
+          <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="TShirtWhite" x="-290" y="493" scale="1" animated="no" translateSpeed="1" scaleSpeed="1" guid="ab1c2c96-6df7-4bd9-ba7f-25fb5de0a6a3" />
+          <move-object idTarget="TShirtWhite" x="-290" y="493" scale="1" animated="no" translateSpeed="1" scaleSpeed="1" guid="09296a1e-ff71-45cf-afc1-3479605ad965" />
           <condition />
-          <deactivate flag="Top" guid="b1542367-74f6-4de9-8d00-72db89d2a3d2" />
+          <set-value var="Top" value="0" guid="c87c9552-ec42-4014-9efc-eb7cb91ad69c" />
           <condition />
         </effect>
-      </drag-to>
+      </use>
     </actions>
   </object>
-  <object id="TShirtDare" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="TShirtDare" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Dare_tshirt.png" />
       <asset type="icon" uri="assets/icon/Dare_tshirt.png" />
@@ -920,31 +896,31 @@
       </detailed>
     </description>
     <actions>
-      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <inactive flag="Top" />
+          <equals var="Top" value="0" />
         </condition>
         <effect>
-          <activate flag="Top" guid="09a8ad48-baed-4ac4-85b8-64dbafb5c758" />
+          <set-value var="Top" value="1" guid="7a59d856-19fb-448c-a863-0276e68a3f6a" />
           <condition />
-          <move-object idTarget="TShirtDare" x="590" y="679" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <move-object idTarget="TShirtDare" x="590" y="679" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="3c0ba2ad-68da-43a5-9492-5aba3c84a093" />
           <condition />
         </effect>
-      </drag-to>
-      <drag-to idTarget="FondoTopParts" needsGoTo="no" keepDistance="0" not-effects="no">
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <active flag="Top" />
+          <not-equals var="Top" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="TShirtDare" x="95" y="922" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <move-object idTarget="TShirtDare" x="95" y="922" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="040dc68f-edd1-442f-9051-60ec63cd5eaa" />
           <condition />
-          <deactivate flag="Top" guid="5a761047-b54e-42fb-b481-7635f906b5c5" />
+          <set-value var="Top" value="0" guid="920793e6-2375-4fc6-8b7d-93a174a661da" />
           <condition />
         </effect>
-      </drag-to>
+      </use>
     </actions>
   </object>
-  <object id="Skirt" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="Skirt" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Short-Skirt-PNG.png" />
       <asset type="icon" uri="assets/icon/Short-Skirt-PNG.png" />
@@ -958,31 +934,31 @@
       </detailed>
     </description>
     <actions>
-      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
           <equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <set-value var="Bottom" value="1" guid="6d6fe404-04b6-40b5-afee-873383126eb4" />
+          <set-value var="Bottom" value="1" guid="214b4c01-9b2f-411e-a29c-654bb0917c3e" />
           <condition />
-          <move-object idTarget="Skirt" x="585" y="920" scale="0.6570418" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <move-object idTarget="Skirt" x="585" y="920" scale="0.6570418" animated="no" translateSpeed="1" scaleSpeed="1" guid="486ab03b-4df8-4a15-a7d9-770b3c97bad0" />
           <condition />
         </effect>
-      </drag-to>
-      <drag-to idTarget="FondoBottomParts" needsGoTo="no" keepDistance="0" not-effects="no">
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <less-than var="Bottom" value="0" />
+          <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="Skirt" x="1203" y="438" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <move-object idTarget="Skirt" x="1203" y="438" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="9640815e-097a-462c-b9c0-df317c825e0e" />
           <condition />
-          <set-value var="Bottom" value="0" guid="9ee7fb4a-2930-480c-9014-19137973d42c" />
+          <set-value var="Bottom" value="0" guid="3315cf0f-13cd-432e-a750-d36fbde77d40" />
           <condition />
         </effect>
-      </drag-to>
+      </use>
     </actions>
   </object>
-  <object id="Pants" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="Pants" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Trouser-Free-Download-PNG.png" />
       <asset type="icon" uri="assets/icon/Trouser-Free-Download-PNG.png" />
@@ -996,28 +972,28 @@
       </detailed>
     </description>
     <actions>
-      <drag-to idTarget="Mannequin" needsGoTo="no" keepDistance="0" not-effects="no">
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
           <equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <set-value var="Bottom" value="1" guid="6d6fe404-04b6-40b5-afee-873383126eb4" />
+          <set-value var="Bottom" value="1" guid="9400afd5-a00f-492f-80a3-23907b69bdbc" />
           <condition />
-          <move-object idTarget="Pants" x="580" y="1120" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="a6b98071-1630-4109-9b58-80369d146290" />
+          <move-object idTarget="Pants" x="580" y="1120" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="4d38c007-aa02-4553-aee8-e02e83340b4f" />
           <condition />
         </effect>
-      </drag-to>
-      <drag-to idTarget="FondoBottomParts" needsGoTo="no" keepDistance="0" not-effects="no">
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <greater-than var="Bottom" value="0" />
+          <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="Pants" x="1520" y="584" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="2b6038f9-4d0f-478d-9750-37786e77bcb9" />
+          <move-object idTarget="Pants" x="1520" y="584" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="bde494a0-c24f-4aa7-b0f7-37b311e8af45" />
           <condition />
-          <set-value var="Bottom" value="0" guid="9ee7fb4a-2930-480c-9014-19137973d42c" />
+          <set-value var="Bottom" value="0" guid="b63fe81d-6451-404f-83df-318c6290d92d" />
           <condition />
         </effect>
-      </drag-to>
+      </use>
     </actions>
   </object>
   <object id="Boton" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
