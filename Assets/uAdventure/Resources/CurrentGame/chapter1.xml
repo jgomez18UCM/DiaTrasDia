@@ -34,9 +34,9 @@
   <character id="Conciudadano" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/LookUp.eaa.xml" />
-      <asset type="standdown" uri="assets/animation/LookDown.eaa.xml" />
-      <asset type="standright" uri="assets/animation/LookRight.eaa.xml" />
-      <asset type="standleft" uri="assets/animation/LookLeft.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/LookUp.eaa.xml" />
+      <asset type="standright" uri="assets/animation/LookUp.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/LookUp.eaa.xml" />
       <asset type="speakup" uri="assets/special/EmptyAnimation" />
       <asset type="speakdown" uri="assets/special/EmptyAnimation" />
       <asset type="speakright" uri="assets/special/EmptyAnimation" />
@@ -85,12 +85,12 @@
       </talk-to>
     </actions>
   </character>
-  <character id="Conciudadano1" behaviour="first-action">
+  <character id="Cajero" behaviour="first-action">
     <resources name="No name">
-      <asset type="standup" uri="assets/animation/LookUp.eaa.xml" />
-      <asset type="standdown" uri="assets/animation/LookDown.eaa.xml" />
-      <asset type="standright" uri="assets/animation/LookRight.eaa.xml" />
-      <asset type="standleft" uri="assets/animation/LookLeft.eaa.xml" />
+      <asset type="standup" uri="assets/animation/LookUp_Cashier.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/LookUp_Cashier.eaa.xml" />
+      <asset type="standright" uri="assets/animation/LookUp_Cashier.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/LookUp_Cashier.eaa.xml" />
       <asset type="speakup" uri="assets/special/EmptyAnimation" />
       <asset type="speakdown" uri="assets/special/EmptyAnimation" />
       <asset type="speakright" uri="assets/special/EmptyAnimation" />
@@ -120,6 +120,88 @@
         <documentation>Created with target conversation: Conversacion_Super</documentation>
         <effect>
           <trigger-conversation idTarget="Conversacion_Super" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="MaleCoworker" behaviour="first-action">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/LookUp_MaleCoworker.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/LookUp_MaleCoworker.eaa.xml" />
+      <asset type="standright" uri="assets/animation/LookUp_MaleCoworker.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/LookUp_MaleCoworker.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#242935" bubbleBorderColor="#0C0C0C">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#131010" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>
+        </documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Companero" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="FemaleCoworker" behaviour="first-action">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/LookUp_FemaleCoworker.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/LookUp_FemaleCoworker.eaa.xml" />
+      <asset type="standright" uri="assets/animation/LookUp_FemaleCoworker.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/LookUp_FemaleCoworker.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#242935" bubbleBorderColor="#0C0C0C">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#131010" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>
+        </documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Companera" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
           <condition />
         </effect>
       </talk-to>
@@ -234,6 +316,10 @@
     <objects>
       <object-ref idTarget="Boton" x="921" y="171" scale="0.0694964" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
+    <characters>
+      <character-ref idTarget="FemaleCoworker" x="604" y="496" scale="0.5120457" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="MaleCoworker" x="868" y="422" scale="0.2883654" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -305,13 +391,14 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/pngtree-photo-of-supermarket-cashier-area-image_1048817.jpg" />
+      <asset type="background" uri="assets/background/Register.png" />
+      <asset type="foreground" uri="" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="664" y="194" width="96" height="48" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="323" y="59" width="61" height="30" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <post-effect>
           <activate flag="ExitMarket" guid="0aebeb83-f8ad-48f2-94b3-2bcfa85f799e" />
@@ -320,11 +407,14 @@
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Boton" x="714" y="241" scale="0.1392069" glow="no" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="Boton" x="353" y="90" scale="0.08787435" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
     <characters>
-      <character-ref idTarget="Conciudadano1" x="491" y="478" scale="0.5041518" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Cajero" x="405" y="369" scale="0.6666603" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
     </characters>
+    <atrezzo>
+      <atrezzo-ref idTarget="Caja" x="303" y="401" scale="0.9922039" glow="no" layer="2" />
+    </atrezzo>
   </scene>
   <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -609,14 +699,14 @@
   </graph-conversation>
   <graph-conversation id="Conversacion_Super">
     <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
-      <speak-char idTarget="Conciudadano1">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
         <text>Hola señorita, ¿que quería?</text>
       </speak-char>
       <condition>
         <equals var="Gender" value="1" />
       </condition>
-      <speak-char idTarget="Conciudadano1">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
         <text>Hola señorito, ¿que quería?</text>
       </speak-char>
@@ -650,7 +740,7 @@
       <child nodeindex="3" />
     </option-node>
     <dialogue-node nodeindex="2" editor-x="845" editor-y="226">
-      <speak-char idTarget="Conciudadano1">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
         <text>Lo siento, no me habia percatado</text>
       </speak-char>
@@ -658,11 +748,49 @@
       <end-conversation />
     </dialogue-node>
     <dialogue-node nodeindex="3" editor-x="851" editor-y="629">
-      <speak-char idTarget="Conciudadano1">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
         <text>...</text>
       </speak-char>
       <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Companera">
+    <dialogue-node nodeindex="0" editor-x="335" editor-y="76">
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>¿Por qué te metes en el baño de los hombres?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómoda te sientas.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Companero">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>¿Por qué te metes en el baño de las mujeres?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>No hagas caso a Penelope, entra al baño donde más cómodo te sientas.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -906,4 +1034,18 @@
       </detailed>
     </description>
   </object>
+  <atrezzoobject id="Caja">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/RegisterForeground.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </atrezzoobject>
 </eAdventure>
