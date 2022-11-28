@@ -85,6 +85,46 @@
       </talk-to>
     </actions>
   </character>
+  <character id="Conciudadano1" behaviour="first-action">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/LookUp.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/LookDown.eaa.xml" />
+      <asset type="standright" uri="assets/animation/LookRight.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/LookLeft.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#242935" bubbleBorderColor="#0C0C0C">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#131010" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Super</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Super" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
   <scene id="MenuPersonalizacion" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -125,7 +165,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <condition>
           <equals var="Bottom" value="0" />
@@ -137,14 +177,14 @@
           <condition />
         </not-effect>
       </exit>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle2" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ExitWork" />
           <inactive flag="ExitMarket" />
         </condition>
       </exit>
-      <exit rectangular="yes" x="-12" y="356" width="227" height="741" hasInfluenceArea="no" idTarget="Calle3" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-12" y="356" width="227" height="741" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ExitMarket" />
@@ -155,7 +195,7 @@
       <object-ref idTarget="Espejo" x="385" y="773" scale="0.2407269" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
-  <scene id="Calle" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Calle_Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -183,7 +223,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="846" y="154" width="85" height="75" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="893" y="150" width="59" height="74" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <post-effect>
           <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
@@ -191,6 +231,9 @@
         </post-effect>
       </exit>
     </exits>
+    <objects>
+      <object-ref idTarget="Boton" x="921" y="171" scale="0.0694964" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
   </scene>
   <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -243,7 +286,7 @@
       </active-area>
     </active-areas>
   </scene>
-  <scene id="Calle2" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Calle_Super" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -258,7 +301,7 @@
       </exit>
     </exits>
   </scene>
-  <scene id="Supermercado" hideInventory="no" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Supermercado" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -268,7 +311,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="664" y="194" width="101" height="92" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="664" y="194" width="96" height="48" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <post-effect>
           <activate flag="ExitMarket" guid="0aebeb83-f8ad-48f2-94b3-2bcfa85f799e" />
@@ -276,8 +319,14 @@
         </post-effect>
       </exit>
     </exits>
+    <objects>
+      <object-ref idTarget="Boton" x="714" y="241" scale="0.1392069" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <characters>
+      <character-ref idTarget="Conciudadano1" x="491" y="478" scale="0.5041518" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+    </characters>
   </scene>
-  <scene id="Calle3" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -292,7 +341,7 @@
       </exit>
     </exits>
   </scene>
-  <scene id="Bar" hideInventory="no" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -331,7 +380,12 @@
         <text>Que agradable sujeto</text>
       </speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <set-value var="RespuestaConciudadano" value="2" guid="f2b51869-5262-42a6-ae84-daf0ef11a79f" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
     <dialogue-node nodeindex="3" editor-x="923" editor-y="441">
       <speak-char idTarget="Conciudadano">
@@ -339,7 +393,12 @@
         <text>...</text>
       </speak-char>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <set-value var="RespuestaConciudadano" value="1" guid="57c71b4f-0683-42bd-a82c-f6c9eb169b69" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="c2">
@@ -348,7 +407,16 @@
         <resources name="No name" />
         <text>...</text>
       </speak-char>
-      <condition />
+      <condition>
+        <equals var="RespuestaConciudadano" value="1" />
+      </condition>
+      <speak-char idTarget="Conciudadano">
+        <resources name="No name" />
+        <text>Encantado de conocerte</text>
+      </speak-char>
+      <condition>
+        <equals var="RespuestaConciudadano" value="2" />
+      </condition>
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -419,16 +487,6 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="Prueba">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-player>
-        <resources name="No name" />
-        <text>Hola</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
   <graph-conversation id="Personalizacion">
     <dialogue-node nodeindex="0" editor-x="42" editor-y="61">
       <speak-player>
@@ -438,7 +496,7 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" keepShowing="yes" editor-x="275" editor-y="55" x="275" y="55">
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="275" editor-y="55" x="275" y="55">
       <speak-player>
         <text>Hombre</text>
         <resources name="No name" />
@@ -494,7 +552,7 @@
         <condition />
       </effect>
     </dialogue-node>
-    <option-node nodeindex="5" keepShowing="yes" editor-x="861" editor-y="72" x="861" y="72">
+    <option-node nodeindex="5" keepShowing="yes" preListening="yes" editor-x="861" editor-y="72" x="861" y="72">
       <speak-player>
         <text>El</text>
         <resources name="No name" />
@@ -547,6 +605,65 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Super">
+    <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
+      <speak-char idTarget="Conciudadano1">
+        <resources name="No name" />
+        <text>Hola señorita, ¿que quería?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="Conciudadano1">
+        <resources name="No name" />
+        <text>Hola señorito, ¿que quería?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="398" editor-y="206" x="398" y="206">
+      <speak-player>
+        <text>Se ha equivocado, en realidad soy un chico</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <child nodeindex="2" />
+      <speak-player>
+        <text>Se ha equivocado, en realidad soy una chica</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <child nodeindex="2" />
+      <speak-player>
+        <text>Pasar la compra y no responder</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="845" editor-y="226">
+      <speak-char idTarget="Conciudadano1">
+        <resources name="No name" />
+        <text>Lo siento, no me habia percatado</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="851" editor-y="629">
+      <speak-char idTarget="Conciudadano1">
+        <resources name="No name" />
+        <text>...</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="Espejo" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
