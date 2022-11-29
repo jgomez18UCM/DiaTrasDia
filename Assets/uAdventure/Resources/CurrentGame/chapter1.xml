@@ -333,6 +333,15 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Amigo</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Amigo1" guid="ce5b9aaa-0213-453d-9f28-6331ce7da7a0" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <character id="Friend2" behaviour="first-action">
     <resources name="No name">
@@ -364,6 +373,14 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Amigo1" guid="5112e102-15f6-4a57-bcc3-d103d8a9aff0" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <character id="BarPerson" behaviour="first-action">
     <resources name="No name">
@@ -557,6 +574,16 @@
           <deactivate flag="IsInBathroom" guid="88e16bfd-7111-48e1-b84f-bf22bc0d5fb4" />
           <condition />
         </effect>
+        <post-effect>
+          <trigger-conversation idTarget="Conversacion_Companera" guid="e39ece67-0767-4ec0-9f8c-5367c3e0171e" />
+          <condition>
+            <equals var="Gender" value="1" />
+          </condition>
+          <trigger-conversation idTarget="Conversacion_Companero" guid="38262538-54b0-48b5-bcf8-6e78204d8dde" />
+          <condition>
+            <equals var="Gender" value="-1" />
+          </condition>
+        </post-effect>
       </exit>
     </exits>
     <characters>
@@ -584,6 +611,10 @@
     <exits>
       <exit rectangular="yes" x="164" y="27" width="62" height="172" hasInfluenceArea="no" idTarget="Supermercado" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <post-effect>
+          <trigger-conversation idTarget="Conversation_Senora_Super" guid="3594fcfa-d138-4ec6-8f03-3b6471924224" />
+          <condition />
+        </post-effect>
       </exit>
     </exits>
   </scene>
@@ -1007,6 +1038,49 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="Conversation_Senora_Super">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorita, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, [Player] es un hombre, no una mujer.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorito, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, [Player] es una mujer, no un hombre.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>No lo entiendo, pero disculpe</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
   <graph-conversation id="Conversacion_Companera">
     <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
       <speak-char idTarget="FemaleCoworker">
@@ -1054,49 +1128,6 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="Conversation_Senora_Super">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>Señorita, iba yo antes, no se cuele, por favor</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Gertrudis, [Player] es un hombre, no una mujer.</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>Señorito, iba yo antes, no se cuele, por favor</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="-1" />
-      </condition>
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Gertrudis, [Player] es una mujer, no un hombre.</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="-1" />
-      </condition>
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>No lo entiendo, pero lo siento</text>
-      </speak-char>
-      <condition />
-      <end-conversation>
-        <effect>
-          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-  </graph-conversation>
   <graph-conversation id="Conversacion_Bano">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="MaleCoworker">
@@ -1113,6 +1144,75 @@
       <condition>
         <equals var="Gender" value="-1" />
       </condition>
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Amigo1">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="Friend1">
+        <resources name="No name" />
+        <text>Hola tía... tío, ¡Joder! </text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="Friend1">
+        <resources name="No name" />
+        <text>Hola tío... tía, ¡Joder! </text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="Friend2">
+        <resources name="No name" />
+        <text>Siempre igual, Pablo</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Friend2">
+        <resources name="No name" />
+        <text>Ya va siendo hora de que te acostumbres</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="520" editor-y="50" x="520" y="50">
+      <speak-player>
+        <text>No pasa nada, Ana.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>Ya va siendo hora de que te acostumbres, Pablo.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="963" editor-y="83">
+      <speak-player>
+        <resources name="No name" />
+        <text>No pasa nada Ana.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>A veces cuesta hacerse a ello</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="928" editor-y="274">
+      <speak-player>
+        <resources name="No name" />
+        <text>Ya va siendo hora de que te acostumbres, Pablo.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Que ya han pasado varios años.</text>
+      </speak-player>
+      <condition />
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
