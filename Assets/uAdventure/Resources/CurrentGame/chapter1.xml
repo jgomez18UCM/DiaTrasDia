@@ -160,10 +160,20 @@
         <documentation>
         </documentation>
         <condition>
-          <inactive flag="ConversacionTrabajo" />
+          <inactive flag="IsInBathroom" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companero" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Bano</documentation>
+        <condition>
+          <active flag="IsInBathroom" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Bano" guid="f66041ac-5d5d-4c20-aaa0-655d4f5dd1c3" />
           <condition />
         </effect>
       </talk-to>
@@ -204,16 +214,25 @@
         <documentation>
         </documentation>
         <condition>
-          <inactive flag="ConversacionTrabajo" />
+          <inactive flag="IsInBathroom" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companera" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
           <condition />
         </effect>
       </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="IsInBathroom" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Bano" guid="08b76726-278c-4865-b235-e11fbad0f178" />
+          <condition />
+        </effect>
+      </talk-to>
     </actions>
   </character>
-  <character id="Boss" behaviour="normal">
+  <character id="Boss" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/Jefe.eaa.xml" />
       <asset type="standdown" uri="assets/animation/Jefe.eaa.xml" />
@@ -230,7 +249,7 @@
       <asset type="walkright" uri="assets/special/EmptyAnimation" />
       <asset type="walkleft" uri="assets/special/EmptyAnimation" />
     </resources>
-    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
       <frontcolor color="#FFFFFF" />
       <bordercolor color="#000000" />
     </textcolor>
@@ -244,7 +263,7 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
-  <character id="OldLady" behaviour="normal">
+  <character id="OldLady" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/Lady.eaa.xml" />
       <asset type="standdown" uri="assets/animation/Lady.eaa.xml" />
@@ -261,7 +280,7 @@
       <asset type="walkright" uri="assets/special/EmptyAnimation" />
       <asset type="walkleft" uri="assets/special/EmptyAnimation" />
     </resources>
-    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#242935" bubbleBorderColor="#000000">
       <frontcolor color="#FFFFFF" />
       <bordercolor color="#000000" />
     </textcolor>
@@ -274,8 +293,17 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversation_Senora_Super</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversation_Senora_Super" guid="e7360861-651a-44b9-90ce-2a8f3c6a715c" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
-  <character id="Friend1" behaviour="normal">
+  <character id="Friend1" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/FriendOne.eaa.xml" />
       <asset type="standdown" uri="assets/animation/FriendOne.eaa.xml" />
@@ -306,7 +334,7 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
-  <character id="Friend2" behaviour="normal">
+  <character id="Friend2" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/FriendTwo.eaa.xml" />
       <asset type="standdown" uri="assets/animation/FriendTwo.eaa.xml" />
@@ -337,7 +365,7 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
-  <character id="BarPerson" behaviour="normal">
+  <character id="BarPerson" behaviour="first-action">
     <resources name="No name">
       <asset type="standup" uri="assets/animation/BarPersona.eaa.xml" />
       <asset type="standdown" uri="assets/animation/BarPersona.eaa.xml" />
@@ -497,9 +525,10 @@
       </exit>
       <exit rectangular="yes" x="2" y="489" width="975" height="63" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <active flag="ConversacionTrabajo" />
-        </condition>
+        <effect>
+          <activate flag="IsInBathroom" guid="7bcfaaa8-986a-4582-a904-5fa7dc04a405" />
+          <condition />
+        </effect>
       </exit>
     </exits>
     <objects>
@@ -524,6 +553,8 @@
         <exit-look text="" cursor-path="" sound-path="" />
         <effect>
           <activate flag="IrBathroom" guid="c897c6dd-0da5-4e59-9266-8eed23a05ab1" />
+          <condition />
+          <deactivate flag="IsInBathroom" guid="88e16bfd-7111-48e1-b84f-bf22bc0d5fb4" />
           <condition />
         </effect>
       </exit>
@@ -569,6 +600,9 @@
     <exits>
       <exit rectangular="yes" x="323" y="59" width="61" height="30" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ConversacionCajeroSuper" />
+        </condition>
         <post-effect>
           <activate flag="ExitMarket" guid="0aebeb83-f8ad-48f2-94b3-2bcfa85f799e" />
           <condition />
@@ -576,13 +610,22 @@
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Boton" x="353" y="90" scale="0.08787435" glow="no" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="Boton" x="351" y="91" scale="0.09333169" glow="no" layer="0" hasInfluenceArea="no">
+        <condition>
+          <active flag="ConversacionCajeroSuper" />
+        </condition>
+      </object-ref>
     </objects>
     <characters>
-      <character-ref idTarget="Cajero" x="418" y="375" scale="0.8215678" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Cajero" x="418" y="375" scale="0.8215678" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="OldLady" x="78" y="353" scale="0.133794" orientation="2" glow="no" layer="1" hasInfluenceArea="no">
+        <condition>
+          <inactive flag="ConversacionSenoraSuper" />
+        </condition>
+      </character-ref>
     </characters>
     <atrezzo>
-      <atrezzo-ref idTarget="Caja" x="303" y="401" scale="0.9922039" glow="no" layer="2" />
+      <atrezzo-ref idTarget="Caja" x="303" y="401" scale="0.9922039" glow="no" layer="3" />
     </atrezzo>
   </scene>
   <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -887,100 +930,32 @@
     <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
       <speak-char idTarget="Cajero">
         <resources name="No name" />
-        <text>Hola señorita, ¿que quería?</text>
+        <text>Son 18.50€, muchas gracias por venir</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Y que lo que te diga Gertrudis no te afecte</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="1" />
+        <active flag="ConversacionSenoraSuper" />
       </condition>
       <speak-char idTarget="Cajero">
         <resources name="No name" />
-        <text>Hola señorito, ¿que quería?</text>
+        <text>que está ya vieja y le cuestan estas cosas</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <active flag="ConversacionSenoraSuper" />
       </condition>
-      <child nodeindex="1" />
-    </dialogue-node>
-    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="398" editor-y="206" x="398" y="206">
       <speak-player>
-        <text>Se ha equivocado, en realidad soy un chico</text>
         <resources name="No name" />
-      </speak-player>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <child nodeindex="2" />
-      <speak-player>
-        <text>Se ha equivocado, en realidad soy una chica</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition>
-        <equals var="Gender" value="-1" />
-      </condition>
-      <child nodeindex="2" />
-      <speak-player>
-        <text>Pasar la compra y no responder</text>
-        <resources name="No name" />
+        <text>Muchas gracias.</text>
       </speak-player>
       <condition />
-      <child nodeindex="3" />
-    </option-node>
-    <dialogue-node nodeindex="2" editor-x="845" editor-y="226">
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Lo siento, no me habia percatado</text>
-      </speak-char>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="851" editor-y="629">
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>...</text>
-      </speak-char>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="Conversacion_Companera">
-    <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
-      <speak-char idTarget="FemaleCoworker">
-        <resources name="No name" />
-        <text>¿Por qué te metes en el baño de los hombres?</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <speak-char idTarget="FemaleCoworker">
-        <resources name="No name" />
-        <text>No hagas caso a Marcos, entra al baño donde más cómoda te sientas.</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="-1" />
-        <equals var="Pronouns" value="-1" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
-      </speak-player>
-      <condition>
-        <equals var="Gender" value="-1" />
-        <equals var="Pronouns" value="1" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>No hagas caso a Marcos, entra al baño donde más cómode te sientas.</text>
-      </speak-player>
-      <condition>
-        <equals var="Gender" value="-1" />
-        <equals var="Pronouns" value="0" />
-      </condition>
       <end-conversation>
         <effect>
-          <activate flag="ConversacionTrabajo" guid="f54863df-95ab-4e7e-be20-b20878636fdd" />
-          <condition>
-            <equals var="Gender" value="-1" />
-          </condition>
+          <activate flag="ConversacionCajeroSuper" guid="e5295a4a-7946-4446-aac6-2ddb4e75b7fb" />
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -993,6 +968,7 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="-1" />
+        <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
@@ -1001,6 +977,7 @@
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Pronouns" value="1" />
+        <active flag="IrBathroom" />
       </condition>
       <speak-player>
         <resources name="No name" />
@@ -1009,6 +986,7 @@
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Bottom" value="-1" />
+        <active flag="IrBathroom" />
       </condition>
       <speak-player>
         <resources name="No name" />
@@ -1017,6 +995,7 @@
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Pronouns" value="0" />
+        <active flag="IrBathroom" />
       </condition>
       <end-conversation>
         <effect>
@@ -1026,6 +1005,115 @@
           </condition>
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Companera">
+    <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>¿Por qué te metes en el baño de los hombres?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+        <active flag="IrBathroom" />
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómoda te sientas.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="-1" />
+        <active flag="IrBathroom" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="1" />
+        <active flag="IrBathroom" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómode te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="0" />
+        <active flag="IrBathroom" />
+      </condition>
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionTrabajo" guid="f54863df-95ab-4e7e-be20-b20878636fdd" />
+          <condition>
+            <equals var="Gender" value="-1" />
+          </condition>
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversation_Senora_Super">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorita, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, [Player] es un hombre, no una mujer.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorito, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, [Player] es una mujer, no un hombre.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>No lo entiendo, pero lo siento</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Bano">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>Hola, buenas</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>Hola, buenas</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="Espejo" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
