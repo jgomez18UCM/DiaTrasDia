@@ -482,6 +482,34 @@
     <objects>
       <object-ref idTarget="Espejo" x="385" y="773" scale="0.2407269" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
+    <active-areas>
+      <active-area id="IrTrabajoArea" rectangular="yes" x="6" y="0" width="2045" height="1359" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <inactive flag="ConversacionIrTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <custom name="Conversacion" needsGoTo="no" keepDistance="0" not-effects="no">
+            <resources name="No name">
+              <asset type="buttonNormal" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonOver" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonPressed" uri="assets/special/EmptyAnimation" />
+            </resources>
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="79c515c1-9de8-4607-955b-5526594cac61" />
+              <condition />
+            </effect>
+          </custom>
+        </actions>
+      </active-area>
+    </active-areas>
   </scene>
   <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -537,6 +565,8 @@
         </condition>
         <post-effect>
           <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
+          <condition />
+          <trigger-conversation idTarget="IrSupermercado" guid="126f4676-676c-4b5e-8d52-d4c4b2f1fada" />
           <condition />
         </post-effect>
       </exit>
@@ -636,6 +666,8 @@
         </condition>
         <post-effect>
           <activate flag="ExitMarket" guid="0aebeb83-f8ad-48f2-94b3-2bcfa85f799e" />
+          <condition />
+          <trigger-conversation idTarget="IrBar" guid="568a5dea-cd70-41a8-9922-a326c92a516a" />
           <condition />
         </post-effect>
       </exit>
@@ -1211,6 +1243,56 @@
       <speak-player>
         <resources name="No name" />
         <text>Que ya han pasado varios años.</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="IrTrabajo">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Viernes, ¡por fin!</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Toca ir a trabajar</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionIrTrabajo" guid="c32b256a-fd7e-4752-a47c-7d61630e9983" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="IrSupermercado">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O No queda nada en la nevera</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Tendré que ir a hacer la compra...</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="IrBar">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Había quedado para ir al bar</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O ¡Que ganas de ver a Pablo y Ana!</text>
       </speak-player>
       <condition />
       <end-conversation />
