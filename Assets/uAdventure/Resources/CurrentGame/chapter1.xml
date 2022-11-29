@@ -159,6 +159,9 @@
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>
         </documentation>
+        <condition>
+          <inactive flag="ConversacionTrabajo" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companero" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
           <condition />
@@ -200,12 +203,170 @@
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>
         </documentation>
+        <condition>
+          <inactive flag="ConversacionTrabajo" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companera" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
           <condition />
         </effect>
       </talk-to>
     </actions>
+  </character>
+  <character id="Boss" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/Jefe.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/Jefe.eaa.xml" />
+      <asset type="standright" uri="assets/animation/Jefe.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/Jefe.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="OldLady" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/Lady.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/Lady.eaa.xml" />
+      <asset type="standright" uri="assets/animation/Lady.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/Lady.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="Friend1" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/FriendOne.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/FriendOne.eaa.xml" />
+      <asset type="standright" uri="assets/animation/FriendOne.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/FriendOne.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="Friend2" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/FriendTwo.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/FriendTwo.eaa.xml" />
+      <asset type="standright" uri="assets/animation/FriendTwo.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/FriendTwo.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </character>
+  <character id="BarPerson" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/BarPersona.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/BarPersona.eaa.xml" />
+      <asset type="standright" uri="assets/animation/BarPersona.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/BarPersona.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
   </character>
   <scene id="MenuPersonalizacion" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -217,7 +378,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <active-areas>
-      <active-area id="ActiveAreaId" rectangular="yes" x="1" y="0" width="576" height="360" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="ActiveAreaId" rectangular="yes" x="1" y="-1" width="576" height="360" hasInfluenceArea="no" behaviour="first-action">
         <description>
           <name>
           </name>
@@ -277,6 +438,25 @@
       <object-ref idTarget="Espejo" x="385" y="773" scale="0.2407269" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
   </scene>
+  <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/360_F_508856526_6yEL5VTLs3BZG5pfYwP6K2wjEjUOlFBM.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="Tshirt" x="70" y="141" scale="0.06557313" glow="no" layer="3" hasInfluenceArea="no" />
+      <object-ref idTarget="Mannequin" x="298" y="338" scale="0.6011338" glow="no" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtWhite" x="190" y="138" scale="0.1698477" glow="no" layer="4" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtDare" x="67" y="266" scale="0.3023721" glow="no" layer="5" hasInfluenceArea="no" />
+      <object-ref idTarget="Skirt" x="419" y="119" scale="0.189228" glow="no" layer="1" hasInfluenceArea="no" />
+      <object-ref idTarget="Pants" x="522" y="168" scale="0.13624" glow="no" layer="2" hasInfluenceArea="no" />
+      <object-ref idTarget="RopaArrow" x="524" y="353" scale="0.3247602" glow="no" layer="6" hasInfluenceArea="no" />
+    </objects>
+  </scene>
   <scene id="Calle_Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -307,46 +487,59 @@
     <exits>
       <exit rectangular="yes" x="893" y="150" width="59" height="74" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="IrBathroom" />
+        </condition>
         <post-effect>
           <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
           <condition />
         </post-effect>
+      </exit>
+      <exit rectangular="yes" x="2" y="489" width="975" height="63" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ConversacionTrabajo" />
+        </condition>
       </exit>
     </exits>
     <objects>
       <object-ref idTarget="Boton" x="921" y="171" scale="0.0694964" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
     <characters>
-      <character-ref idTarget="FemaleCoworker" x="604" y="496" scale="0.5120457" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="FemaleCoworker" x="604" y="495" scale="0.5120457" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
       <character-ref idTarget="MaleCoworker" x="868" y="422" scale="0.2883654" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
     </characters>
   </scene>
-  <scene id="Ropa" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="WorkBathroom" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/47ae9367b1a92f6c3fd13848f081a17e.png" />
+      <asset type="background" uri="assets/background/office%20restroom.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="1090" y="713" width="198" height="100" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="2" y="468" width="815" height="75" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <not-equals var="Bottom" value="0" />
-          <not-equals var="Top" value="0" />
-        </condition>
+        <effect>
+          <activate flag="IrBathroom" guid="c897c6dd-0da5-4e59-9266-8eed23a05ab1" />
+          <condition />
+        </effect>
       </exit>
     </exits>
-    <objects>
-      <object-ref idTarget="Tshirt" x="121" y="497" scale="0.2276845" glow="no" layer="3" hasInfluenceArea="no" />
-      <object-ref idTarget="Mannequin" x="601" y="1175" scale="2.08727" glow="no" layer="0" hasInfluenceArea="no" />
-      <object-ref idTarget="TShirtWhite" x="-290" y="493" scale="0.5897488" glow="no" layer="4" hasInfluenceArea="no" />
-      <object-ref idTarget="TShirtDare" x="95" y="922" scale="1.049903" glow="no" layer="5" hasInfluenceArea="no" />
-      <object-ref idTarget="Skirt" x="1203" y="438" scale="0.6570418" glow="no" layer="1" hasInfluenceArea="no" />
-      <object-ref idTarget="Pants" x="1520" y="584" scale="0.4730556" glow="no" layer="2" hasInfluenceArea="no" />
-    </objects>
+    <characters>
+      <character-ref idTarget="MaleCoworker" x="419" y="461" scale="0.4277811" orientation="2" glow="no" layer="1" hasInfluenceArea="no">
+        <condition>
+          <equals var="Gender" value="1" />
+        </condition>
+      </character-ref>
+      <character-ref idTarget="FemaleCoworker" x="545" y="481" scale="0.788049" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
+        <condition>
+          <equals var="Gender" value="-1" />
+        </condition>
+      </character-ref>
+    </characters>
   </scene>
   <scene id="Calle_Super" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -386,7 +579,7 @@
       <object-ref idTarget="Boton" x="353" y="90" scale="0.08787435" glow="no" layer="0" hasInfluenceArea="no" />
     </objects>
     <characters>
-      <character-ref idTarget="Cajero" x="405" y="369" scale="0.6666603" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Cajero" x="418" y="375" scale="0.8215678" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
     </characters>
     <atrezzo>
       <atrezzo-ref idTarget="Caja" x="303" y="401" scale="0.9922039" glow="no" layer="2" />
@@ -406,6 +599,10 @@
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
+    <characters>
+      <character-ref idTarget="Friend1" x="79" y="405" scale="0.2930555" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend2" x="377" y="415" scale="0.4752252" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <scene id="Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -416,9 +613,12 @@
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <characters>
+      <character-ref idTarget="BarPerson" x="1085" y="1834" scale="1.117928" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+    </characters>
   </scene>
   <graph-conversation id="Conversacion">
-    <dialogue-node nodeindex="0" editor-x="172" editor-y="169">
+    <dialogue-node nodeindex="0" editor-x="141" editor-y="144">
       <speak-char idTarget="Conciudadano">
         <resources name="No name" />
         <text>Buenos días</text>
@@ -440,7 +640,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="907" editor-y="218">
+    <dialogue-node nodeindex="2" editor-x="901" editor-y="30">
       <speak-char idTarget="Conciudadano">
         <resources name="No name" />
         <text>Que agradable sujeto</text>
@@ -453,7 +653,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="923" editor-y="441">
+    <dialogue-node nodeindex="3" editor-x="869" editor-y="339">
       <speak-char idTarget="Conciudadano">
         <resources name="No name" />
         <text>...</text>
@@ -550,6 +750,16 @@
         <equals var="Bottom" value="0" />
         <inactive flag="ExitWork" />
       </condition>
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RopaSalir">
+    <dialogue-node nodeindex="0" editor-x="201" editor-y="56">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Debería terminar de vestirme</text>
+      </speak-player>
+      <condition />
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -733,7 +943,7 @@
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Companera">
-    <dialogue-node nodeindex="0" editor-x="335" editor-y="76">
+    <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
       <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
         <text>¿Por qué te metes en el baño de los hombres?</text>
@@ -747,12 +957,36 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="-1" />
       </condition>
-      <end-conversation />
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómode te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <equals var="Pronouns" value="0" />
+      </condition>
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionTrabajo" guid="f54863df-95ab-4e7e-be20-b20878636fdd" />
+          <condition>
+            <equals var="Gender" value="-1" />
+          </condition>
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Companero">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+    <dialogue-node nodeindex="0" editor-x="69" editor-y="50">
       <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
         <text>¿Por qué te metes en el baño de las mujeres?</text>
@@ -766,8 +1000,32 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="1" />
+        <equals var="Pronouns" value="1" />
       </condition>
-      <end-conversation />
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Penelope, entra al baño donde más cómoda te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="1" />
+        <equals var="Bottom" value="-1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>No hagas caso a Penelope, entra al baño donde más cómode te sientas.</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="1" />
+        <equals var="Pronouns" value="0" />
+      </condition>
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionTrabajo" guid="bc25d1ba-460b-46c6-ae09-db3945b48c9c" />
+          <condition>
+            <equals var="Gender" value="1" />
+          </condition>
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <object id="Espejo" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
@@ -787,6 +1045,38 @@
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <effect>
           <trigger-conversation idTarget="MenuEspejo" guid="2f9539a0-140a-487f-a6a3-5139e4e52ab8" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Sin título.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <trigger-scene idTarget="Casa" x="1024" y="1020" transitionTime="0" transitionType="0" guid="e65ba533-163e-4a92-889d-39340fdecd48" />
+          <condition />
+        </effect>
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="RopaSalir" guid="def8122d-ae23-4d13-a97b-d1ebb2d9995d" />
           <condition />
         </effect>
       </use>
@@ -826,9 +1116,13 @@
         </condition>
         <effect>
           <set-value var="Top" value="1" guid="4afc89a9-17e4-4c98-a545-9b6466ceb192" />
-          <condition />
-          <move-object idTarget="Tshirt" x="577" y="731" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="bf9c03dc-96e3-440a-9b8d-23da4472d0d0" />
-          <condition />
+          <condition>
+            <equals var="Top" value="0" />
+          </condition>
+          <move-object idTarget="Tshirt" x="295" y="216" scale="0.06557313" animated="no" translateSpeed="1" scaleSpeed="1" guid="bf9c03dc-96e3-440a-9b8d-23da4472d0d0" />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -836,10 +1130,14 @@
           <not-equals var="Top" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="Tshirt" x="121" y="497" scale="0.2276845" animated="no" translateSpeed="1" scaleSpeed="1" guid="f3b5d016-8e75-46ef-bcae-3d1dd959f269" />
-          <condition />
+          <move-object idTarget="Tshirt" x="70" y="141" scale="0.06557313" animated="no" translateSpeed="1" scaleSpeed="1" guid="f3b5d016-8e75-46ef-bcae-3d1dd959f269" />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
           <set-value var="Top" value="0" guid="9e1b3f56-202b-4d7a-923b-0fdaacb7f4a7" />
-          <condition />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
         </effect>
       </use>
     </actions>
@@ -864,9 +1162,13 @@
         </condition>
         <effect>
           <set-value var="Top" value="1" guid="ae672e4f-cb45-47a2-b386-5ecdf0d4920c" />
-          <condition />
-          <move-object idTarget="TShirtWhite" x="580" y="724" scale="0.5897488" animated="no" translateSpeed="1" scaleSpeed="1" guid="fb9380b3-018d-4e4d-b991-95faa0ec1616" />
-          <condition />
+          <condition>
+            <equals var="Top" value="0" />
+          </condition>
+          <move-object idTarget="TShirtWhite" x="292" y="211" scale="0.1698477" animated="no" translateSpeed="1" scaleSpeed="1" guid="fb9380b3-018d-4e4d-b991-95faa0ec1616" />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -874,10 +1176,14 @@
           <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="TShirtWhite" x="-290" y="493" scale="1" animated="no" translateSpeed="1" scaleSpeed="1" guid="09296a1e-ff71-45cf-afc1-3479605ad965" />
-          <condition />
+          <move-object idTarget="TShirtWhite" x="190" y="137" scale="0.1698477" animated="no" translateSpeed="1" scaleSpeed="1" guid="09296a1e-ff71-45cf-afc1-3479605ad965" />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
           <set-value var="Top" value="0" guid="c87c9552-ec42-4014-9efc-eb7cb91ad69c" />
-          <condition />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
         </effect>
       </use>
     </actions>
@@ -902,9 +1208,13 @@
         </condition>
         <effect>
           <set-value var="Top" value="1" guid="7a59d856-19fb-448c-a863-0276e68a3f6a" />
-          <condition />
-          <move-object idTarget="TShirtDare" x="590" y="679" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="3c0ba2ad-68da-43a5-9492-5aba3c84a093" />
-          <condition />
+          <condition>
+            <equals var="Top" value="0" />
+          </condition>
+          <move-object idTarget="TShirtDare" x="292" y="196" scale="0.3023721" animated="no" translateSpeed="1" scaleSpeed="1" guid="3c0ba2ad-68da-43a5-9492-5aba3c84a093" />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -912,10 +1222,14 @@
           <not-equals var="Top" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="TShirtDare" x="95" y="922" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="040dc68f-edd1-442f-9051-60ec63cd5eaa" />
-          <condition />
+          <move-object idTarget="TShirtDare" x="67" y="266" scale="0.3023721" animated="no" translateSpeed="1" scaleSpeed="1" guid="040dc68f-edd1-442f-9051-60ec63cd5eaa" />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
           <set-value var="Top" value="0" guid="920793e6-2375-4fc6-8b7d-93a174a661da" />
-          <condition />
+          <condition>
+            <not-equals var="Top" value="0" />
+          </condition>
         </effect>
       </use>
     </actions>
@@ -940,9 +1254,13 @@
         </condition>
         <effect>
           <set-value var="Bottom" value="1" guid="214b4c01-9b2f-411e-a29c-654bb0917c3e" />
-          <condition />
-          <move-object idTarget="Skirt" x="585" y="920" scale="0.6570418" animated="no" translateSpeed="1" scaleSpeed="1" guid="486ab03b-4df8-4a15-a7d9-770b3c97bad0" />
-          <condition />
+          <condition>
+            <equals var="Bottom" value="0" />
+          </condition>
+          <move-object idTarget="Skirt" x="293" y="263" scale="0.189228" animated="no" translateSpeed="1" scaleSpeed="1" guid="486ab03b-4df8-4a15-a7d9-770b3c97bad0" />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -950,10 +1268,14 @@
           <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="Skirt" x="1203" y="438" scale="1.049903" animated="no" translateSpeed="1" scaleSpeed="1" guid="9640815e-097a-462c-b9c0-df317c825e0e" />
-          <condition />
+          <move-object idTarget="Skirt" x="419" y="119" scale="0.189228" animated="no" translateSpeed="1" scaleSpeed="1" guid="9640815e-097a-462c-b9c0-df317c825e0e" />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
           <set-value var="Bottom" value="0" guid="3315cf0f-13cd-432e-a750-d36fbde77d40" />
-          <condition />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
         </effect>
       </use>
     </actions>
@@ -978,9 +1300,13 @@
         </condition>
         <effect>
           <set-value var="Bottom" value="1" guid="9400afd5-a00f-492f-80a3-23907b69bdbc" />
-          <condition />
-          <move-object idTarget="Pants" x="580" y="1120" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="4d38c007-aa02-4553-aee8-e02e83340b4f" />
-          <condition />
+          <condition>
+            <equals var="Bottom" value="0" />
+          </condition>
+          <move-object idTarget="Pants" x="292" y="330" scale="0.13624" animated="no" translateSpeed="1" scaleSpeed="1" guid="4d38c007-aa02-4553-aee8-e02e83340b4f" />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -988,10 +1314,14 @@
           <not-equals var="Bottom" value="0" />
         </condition>
         <effect>
-          <move-object idTarget="Pants" x="1520" y="584" scale="0.4730556" animated="no" translateSpeed="1" scaleSpeed="1" guid="bde494a0-c24f-4aa7-b0f7-37b311e8af45" />
-          <condition />
+          <move-object idTarget="Pants" x="522" y="168" scale="0.13624" animated="no" translateSpeed="1" scaleSpeed="1" guid="bde494a0-c24f-4aa7-b0f7-37b311e8af45" />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
           <set-value var="Bottom" value="0" guid="b63fe81d-6451-404f-83df-318c6290d92d" />
-          <condition />
+          <condition>
+            <not-equals var="Bottom" value="0" />
+          </condition>
         </effect>
       </use>
     </actions>
