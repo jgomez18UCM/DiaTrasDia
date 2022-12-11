@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <eAdventure version="3">
   <player>
     <resources name="No name">
@@ -423,7 +423,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <active-areas>
-      <active-area id="ActiveAreaId" rectangular="yes" x="1" y="-1" width="576" height="360" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="ActiveAreaId" rectangular="yes" x="-4" y="6" width="576" height="360" hasInfluenceArea="no" behaviour="first-action">
         <description>
           <name>
           </name>
@@ -435,7 +435,7 @@
         <actions>
           <use needsGoTo="yes" keepDistance="35" not-effects="no">
             <effect>
-              <trigger-conversation idTarget="Personalizacion" guid="d93a25b2-5334-4ef9-9d59-57735670c51f" />
+              <trigger-scene idTarget="MenuPersonalizacionn" x="288" y="270" transitionTime="0" transitionType="0" guid="9c82beec-d56d-4efa-9edf-b6e0c2bf9bb0" />
               <condition />
             </effect>
           </use>
@@ -1656,4 +1656,5 @@
     </description>
   </atrezzoobject>
   <unity-scene id="Prueba" scene="Assets/Scenes/Afeitar.unity" />
+  <unity-scene id="MenuPersonalizacionn" scene="Assets/Scenes/PersonalizationMenu.unity" />
 </eAdventure>
