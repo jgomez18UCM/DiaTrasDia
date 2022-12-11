@@ -447,13 +447,13 @@
     <documentation>
     </documentation>
     <resources name="">
-      <asset type="background" uri="assets/background/habitacion-alquilar-1563544275.jpg" />
+      <asset type="background" uri="assets/background/Bedroom_Day.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <condition>
           <not-equals var="Bottom" value="0" />
@@ -465,25 +465,40 @@
           <condition />
         </not-effect>
       </exit>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ExitWork" />
           <inactive flag="ExitMarket" />
         </condition>
       </exit>
-      <exit rectangular="yes" x="-12" y="356" width="227" height="741" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ExitMarket" />
         </condition>
       </exit>
     </exits>
-    <objects>
-      <object-ref idTarget="Espejo" x="385" y="773" scale="0.2407269" glow="no" layer="0" hasInfluenceArea="no" />
-    </objects>
     <active-areas>
-      <active-area id="IrTrabajoArea" rectangular="yes" x="6" y="0" width="2045" height="1359" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="IrRopa" rectangular="yes" x="1160" y="265" width="226" height="282" hasInfluenceArea="no" behaviour="first-action">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="MenuEspejo" guid="e0a116ca-80b7-4141-8543-d709fc5c6374" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+      <active-area id="IrTrabajoArea" rectangular="yes" x="-8" y="-10" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <inactive flag="ConversacionIrTrabajo" />
         </condition>
@@ -545,21 +560,25 @@
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Conciudadano" x="302" y="379" scale="0.5218748" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Conciudadano" x="302" y="415" scale="0.1768485" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/a.jpg" />
+      <asset type="background" uri="assets/background/Office_BG (30).png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="893" y="150" width="59" height="74" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="no" x="266" y="213" width="59" height="153" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <point x="266" y="213" />
+        <point x="306" y="215" />
+        <point x="325" y="354" />
+        <point x="290" y="366" />
         <condition>
           <active flag="IrBathroom" />
         </condition>
@@ -570,34 +589,39 @@
           <condition />
         </post-effect>
       </exit>
-      <exit rectangular="yes" x="2" y="489" width="975" height="63" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="no" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <point x="1027" y="99" />
+        <point x="1194" y="54" />
+        <point x="1143" y="567" />
+        <point x="1003" y="502" />
         <effect>
           <activate flag="IsInBathroom" guid="7bcfaaa8-986a-4582-a904-5fa7dc04a405" />
           <condition />
         </effect>
       </exit>
     </exits>
-    <objects>
-      <object-ref idTarget="Boton" x="921" y="171" scale="0.0694964" glow="no" layer="0" hasInfluenceArea="no" />
-    </objects>
     <characters>
-      <character-ref idTarget="FemaleCoworker" x="604" y="495" scale="0.5120457" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
-      <character-ref idTarget="MaleCoworker" x="868" y="422" scale="0.2883654" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="FemaleCoworker" x="500" y="796" scale="0.3838131" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="MaleCoworker" x="828" y="851" scale="0.3987977" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="WorkBathroom" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/office%20restroom.jpg" />
+      <asset type="background" uri="assets/background/Office_BG (19).png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="2" y="468" width="815" height="75" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="no" x="1032" y="351" width="128" height="256" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <point x="1032" y="351" />
+        <point x="1155" y="351" />
+        <point x="1160" y="607" />
+        <point x="1032" y="585" />
         <effect>
           <activate flag="IrBathroom" guid="c897c6dd-0da5-4e59-9266-8eed23a05ab1" />
           <condition />
@@ -617,12 +641,12 @@
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="MaleCoworker" x="419" y="461" scale="0.4277811" orientation="2" glow="no" layer="1" hasInfluenceArea="no">
+      <character-ref idTarget="MaleCoworker" x="829" y="969" scale="0.3608478" orientation="2" glow="no" layer="1" hasInfluenceArea="no">
         <condition>
           <equals var="Gender" value="1" />
         </condition>
       </character-ref>
-      <character-ref idTarget="FemaleCoworker" x="545" y="481" scale="0.788049" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
+      <character-ref idTarget="FemaleCoworker" x="815" y="956" scale="0.3779457" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
         <condition>
           <equals var="Gender" value="-1" />
         </condition>
@@ -706,8 +730,8 @@
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Friend1" x="79" y="405" scale="0.2930555" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="Friend2" x="377" y="415" scale="0.4752252" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend1" x="109" y="434" scale="0.2014957" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend2" x="477" y="429" scale="0.1969029" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -849,7 +873,7 @@
       </condition>
       <speak-player>
         <resources name="No name" />
-        <text>* Haz click en el espejo para vestirte *</text>
+        <text>* Haz click en el perchero para vestirte *</text>
       </speak-player>
       <condition>
         <equals var="Top" value="0" />
