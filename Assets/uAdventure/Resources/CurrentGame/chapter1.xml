@@ -453,17 +453,24 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Prueba" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <condition>
-          <not-equals var="Bottom" value="0" />
-          <not-equals var="Top" value="0" />
-          <inactive flag="ExitWork" />
+          <inactive flag="Maquinilla" />
         </condition>
         <not-effect>
           <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
           <condition />
         </not-effect>
+      </exit>
+      <exit rectangular="yes" x="-4" y="356" width="245" height="731" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <inactive flag="ExitWork" />
+          <not-equals var="Top" value="0" />
+          <not-equals var="Bottom" value="0" />
+          <active flag="Maquinilla" />
+        </condition>
       </exit>
       <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
@@ -1624,4 +1631,5 @@
       </detailed>
     </description>
   </atrezzoobject>
+  <unity-scene id="Prueba" scene="Assets/Scenes/Afeitar.unity" />
 </eAdventure>
