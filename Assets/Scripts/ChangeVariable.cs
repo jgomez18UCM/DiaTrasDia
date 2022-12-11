@@ -11,7 +11,7 @@ public class ChangeVariable : MonoBehaviour
     public void Cambia(string variable)
     {
         Game.Instance.Execute(new EffectHolder(new Effects{
-                new SetValueEffect(variable, 0)
+                new SetValueEffect(variable, value)
         }));
     }
 
