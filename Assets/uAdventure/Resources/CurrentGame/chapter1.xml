@@ -417,13 +417,13 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/360_F_508856526_6yEL5VTLs3BZG5pfYwP6K2wjEjUOlFBM.jpg" />
+      <asset type="background" uri="assets/background/Black.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <active-areas>
-      <active-area id="ActiveAreaId" rectangular="yes" x="-4" y="6" width="576" height="360" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="ActiveAreaId" rectangular="yes" x="-13" y="-6" width="1974" height="1104" hasInfluenceArea="no" behaviour="first-action">
         <description>
           <name>
           </name>
@@ -556,18 +556,18 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/image.jpg" />
+      <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="164" y="27" width="62" height="172" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="333" y="371" width="438" height="111" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Conciudadano" x="302" y="415" scale="0.1768485" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Conciudadano" x="152" y="674" scale="0.1959507" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -609,8 +609,8 @@
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="FemaleCoworker" x="500" y="796" scale="0.3838131" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="MaleCoworker" x="828" y="851" scale="0.3987977" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="FemaleCoworker" x="536" y="835" scale="0.3838131" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="MaleCoworker" x="812" y="852" scale="0.3676458" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="WorkBathroom" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -664,13 +664,13 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/image.jpg" />
+      <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="164" y="27" width="62" height="172" hasInfluenceArea="no" idTarget="Supermercado" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="342" y="358" width="351" height="113" hasInfluenceArea="no" idTarget="Supermercado" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <post-effect>
           <trigger-conversation idTarget="Conversation_Senora_Super" guid="3594fcfa-d138-4ec6-8f03-3b6471924224" />
@@ -683,14 +683,14 @@
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/Register.png" />
+      <asset type="background" uri="assets/background/small_grocery_store_by_vui_huynh_dbhl2rf-fullview.jpg" />
       <asset type="foreground" uri="" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="323" y="59" width="61" height="30" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="794" y="461" width="89" height="37" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ConversacionCajeroSuper" />
@@ -704,54 +704,54 @@
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Boton" x="351" y="91" scale="0.09333169" glow="no" layer="0" hasInfluenceArea="no">
+      <object-ref idTarget="Boton" x="839" y="498" scale="0.1171266" glow="no" layer="3" hasInfluenceArea="no">
         <condition>
           <active flag="ConversacionCajeroSuper" />
         </condition>
       </object-ref>
     </objects>
     <characters>
-      <character-ref idTarget="Cajero" x="418" y="375" scale="0.8215678" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
-      <character-ref idTarget="OldLady" x="78" y="353" scale="0.133794" orientation="2" glow="no" layer="1" hasInfluenceArea="no">
+      <character-ref idTarget="Cajero" x="745" y="511" scale="0.1702027" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="OldLady" x="383" y="445" scale="0.2493588" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
         <condition>
           <inactive flag="ConversacionSenoraSuper" />
         </condition>
       </character-ref>
     </characters>
     <atrezzo>
-      <atrezzo-ref idTarget="Caja" x="303" y="401" scale="0.9922039" glow="no" layer="3" />
+      <atrezzo-ref idTarget="Caja" x="675" y="507" scale="1.001623" glow="no" layer="2" />
     </atrezzo>
   </scene>
   <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/image.jpg" />
+      <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="164" y="27" width="62" height="172" hasInfluenceArea="no" idTarget="Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="317" y="416" width="167" height="81" hasInfluenceArea="no" idTarget="Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Friend1" x="109" y="434" scale="0.2014957" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="Friend2" x="477" y="429" scale="0.1969029" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend1" x="134" y="748" scale="0.2751176" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend2" x="641" y="719" scale="0.272061" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/background/huge.jpg" />
+      <asset type="background" uri="assets/background/samuel-inkilainen-bar.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <characters>
-      <character-ref idTarget="BarPerson" x="1085" y="1834" scale="1.117928" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="BarPerson" x="980" y="1166" scale="0.3474948" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <graph-conversation id="Conversacion">
