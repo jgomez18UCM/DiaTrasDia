@@ -413,6 +413,54 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
+  <scene id="Pasillo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Pasillo.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="258" y="165" width="49" height="249" hasInfluenceArea="no" idTarget="Baño" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <inactive flag="ExitWork" />
+        </condition>
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="043c7da0-968b-4a40-a9ac-8c2a548c980d" />
+          <condition />
+        </not-effect>
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <active flag="ExitWork" />
+          <inactive flag="ExitMarket" />
+        </condition>
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <active flag="ExitMarket" />
+          <active flag="ExitWork" />
+        </condition>
+      </exit>
+    </exits>
+  </scene>
   <scene id="MenuPersonalizacion" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -453,7 +501,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Prueba" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <condition>
           <inactive flag="Maquinilla" />
@@ -462,28 +510,6 @@
           <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
           <condition />
         </not-effect>
-      </exit>
-      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <inactive flag="ExitWork" />
-          <not-equals var="Top" value="0" />
-          <not-equals var="Bottom" value="0" />
-          <active flag="Maquinilla" />
-        </condition>
-      </exit>
-      <exit rectangular="yes" x="-12" y="356" width="240" height="741" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <active flag="ExitWork" />
-          <inactive flag="ExitMarket" />
-        </condition>
-      </exit>
-      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <active flag="ExitMarket" />
-        </condition>
       </exit>
     </exits>
     <active-areas>
@@ -1655,6 +1681,6 @@
       </detailed>
     </description>
   </atrezzoobject>
-  <unity-scene id="Prueba" scene="Assets/Scenes/Afeitar.unity" />
+  <unity-scene id="Baño" scene="Assets/Scenes/Afeitar.unity" />
   <unity-scene id="MenuPersonalizacionn" scene="Assets/Scenes/PersonalizationMenu.unity" />
 </eAdventure>
