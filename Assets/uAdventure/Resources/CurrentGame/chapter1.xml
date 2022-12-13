@@ -1683,4 +1683,5 @@
   </atrezzoobject>
   <unity-scene id="Baño" scene="Assets/Scenes/Afeitar.unity" />
   <unity-scene id="MenuPersonalizacionn" scene="Assets/Scenes/PersonalizationMenu.unity" />
+  <unity-scene id="Maquillaje" scene="Assets/Scenes/Maquillar.unity" />
 </eAdventure>

@@ -21,9 +21,11 @@ public class GenerateHair : MonoBehaviour
         hairRendererObjects = new GameObject[numberOfHairs];
 
         int i = 0;
-        while(i < numberOfHairs) 
+        int x = 0;
+
+        while(i < numberOfHairs && x < numberOfHairs * 10) 
         {
-            Vector3 startingPosition = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-4.0f, -1.5f), -1);
+            Vector3 startingPosition = new Vector3(Random.Range(-3.0f, 3.0f), Random.Range(-4.0f, -0.0f), -1);
             Vector3 endPosition = new Vector3(startingPosition.x, startingPosition.y - Random.Range(minHairLength, maxHairLength), -1);
 
             int layerMask = 1 << 11;
@@ -58,7 +60,11 @@ public class GenerateHair : MonoBehaviour
                 l.endWidth = endingWidth;
                 i++;
             }
+
+            x++;
         }
+
+        if (i < numberOfHairs) Debug.Log("Not all hairs were created");
 
         cara.GetComponent<PolygonCollider2D>().enabled = false;
     }

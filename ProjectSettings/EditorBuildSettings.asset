@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Maquillar.unity
+    guid: 31eb9ead477621b4096b3bbda2431178
+  - enabled: 1
     path: Assets/uAdventure/Scenes/_Scene1.unity
     guid: b352354f2b25ab44dbc72d700538ae19
   - enabled: 1
