@@ -413,7 +413,7 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
-  <scene id="MenuPersonalizacion" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="Inicio" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
@@ -435,7 +435,7 @@
         <actions>
           <use needsGoTo="yes" keepDistance="35" not-effects="no">
             <effect>
-              <trigger-scene idTarget="MenuPersonalizacionn" x="288" y="270" transitionTime="0" transitionType="0" guid="9c82beec-d56d-4efa-9edf-b6e0c2bf9bb0" />
+              <trigger-scene idTarget="MenuPersonalizacion" x="288" y="270" transitionTime="0" transitionType="0" guid="9c82beec-d56d-4efa-9edf-b6e0c2bf9bb0" />
               <condition />
             </effect>
           </use>
@@ -455,9 +455,6 @@
     <exits>
       <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
-        <condition>
-          <inactive flag="Maquinilla" />
-        </condition>
         <not-effect>
           <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
           <condition />
@@ -593,7 +590,7 @@
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Maquinilla" x="1796" y="918" scale="0.8143073" glow="no" layer="0" hasInfluenceArea="no">
+      <object-ref idTarget="Maquinilla" x="1735" y="877" scale="0.9256302" glow="no" layer="0" hasInfluenceArea="no">
         <condition>
           <inactive flag="Maquinilla" />
         </condition>
@@ -768,9 +765,6 @@
         </condition>
       </character-ref>
     </characters>
-    <atrezzo>
-      <atrezzo-ref idTarget="Caja" x="675" y="507" scale="1.001623" glow="no" layer="2" />
-    </atrezzo>
   </scene>
   <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -944,130 +938,10 @@
     <dialogue-node nodeindex="0" editor-x="201" editor-y="56">
       <speak-player>
         <resources name="No name" />
-        <text>#O Debería terminar de vestirme</text>
+        <text>Debería terminar de vestirme</text>
       </speak-player>
       <condition />
       <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="Personalizacion">
-    <dialogue-node nodeindex="0" editor-x="42" editor-y="61">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O ¿Cual es tu género?</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="1" />
-    </dialogue-node>
-    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="275" editor-y="55" x="275" y="55">
-      <speak-player>
-        <text>Hombre</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="2" />
-      <speak-player>
-        <text>Mujer</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="3" />
-      <speak-player>
-        <text>No binario</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="4" />
-    </option-node>
-    <dialogue-node nodeindex="2" editor-x="569" editor-y="41">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O ¿Cuales son tus pronombres?</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="5" />
-      <effect>
-        <set-value var="Gender" value="1" guid="a3b4c0f7-c4e7-48fa-b354-bf3234654d80" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="594" editor-y="236">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O ¿Cuales son tus pronombres?</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="5" />
-      <effect>
-        <set-value var="Gender" value="-1" guid="91902be7-79d9-4d30-addc-485b72899808" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="592" editor-y="429">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O ¿Cuales son tus pronombres?</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="5" />
-      <effect>
-        <set-value var="Gender" value="0" guid="f65f49e8-8351-41c7-89ba-d03778d27064" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <option-node nodeindex="5" keepShowing="yes" preListening="yes" editor-x="861" editor-y="72" x="861" y="72">
-      <speak-player>
-        <text>El</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="6" />
-      <speak-player>
-        <text>Ella</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="7" />
-      <speak-player>
-        <text>Elle</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="8" />
-    </option-node>
-    <dialogue-node nodeindex="6" editor-x="1109" editor-y="5">
-      <child nodeindex="9" />
-      <effect>
-        <set-value var="Pronouns" value="1" guid="4b587bc4-1ed9-4589-a373-1c00df82f5e3" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="7" editor-x="1115" editor-y="194">
-      <child nodeindex="9" />
-      <effect>
-        <set-value var="Pronouns" value="-1" guid="7269fe2f-d07c-4ded-a04d-dab42e7a76b5" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="8" editor-x="1123" editor-y="390">
-      <child nodeindex="9" />
-      <effect>
-        <set-value var="Pronouns" value="0" guid="54bcb2de-fe8e-43cf-828e-932635496602" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="9" editor-x="1382" editor-y="240">
-      <speak-player>
-        <resources name="No name" />
-        <text>#! Pasalo bien</text>
-      </speak-player>
-      <condition />
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Casa" x="1024" y="1020" transitionTime="0" transitionType="0" guid="ca67dc04-9e15-40fb-b5d6-184b82b35f29" />
-          <condition />
-        </effect>
-      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Super">
@@ -1426,28 +1300,6 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  <object id="Espejo" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
-    <resources name="No name">
-      <asset type="image" uri="assets/image/mirror-frame-favourites-smzhh-deviantart-32.png" />
-      <asset type="icon" uri="assets/icon/mirror-frame-favourites-smzhh-deviantart-32.png" />
-    </resources>
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-    <actions>
-      <use needsGoTo="yes" keepDistance="35" not-effects="no">
-        <effect>
-          <trigger-conversation idTarget="MenuEspejo" guid="2f9539a0-140a-487f-a6a3-5139e4e52ab8" />
-          <condition />
-        </effect>
-      </use>
-    </actions>
-  </object>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Sin título.png" />
@@ -1740,9 +1592,9 @@
   </object>
   <object id="Maquinilla" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
-      <asset type="image" uri="assets/image/maquinilla.png" />
-      <asset type="icon" uri="assets/icon/maquinilla.png" />
-      <asset type="imageover" uri="assets/image/maquinilla.png" />
+      <asset type="image" uri="assets/image/maquinilla2.png" />
+      <asset type="icon" uri="assets/icon/maquinilla2.png" />
+      <asset type="imageover" uri="assets/image/maquinilla2.png" />
     </resources>
     <description>
       <name>
@@ -1761,21 +1613,7 @@
       </use>
     </actions>
   </object>
-  <atrezzoobject id="Caja">
-    <resources name="No name">
-      <asset type="image" uri="assets/image/RegisterForeground.png" />
-      <asset type="icon" uri="assets/special/EmptyIcon.png" />
-    </resources>
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-  </atrezzoobject>
   <unity-scene id="Afeitado" scene="Assets/Scenes/Afeitar.unity" />
-  <unity-scene id="MenuPersonalizacionn" scene="Assets/Scenes/PersonalizationMenu.unity" />
+  <unity-scene id="MenuPersonalizacion" scene="Assets/Scenes/PersonalizationMenu.unity" />
   <unity-scene id="Maquillaje" scene="Assets/Scenes/Maquillar.unity" />
 </eAdventure>
