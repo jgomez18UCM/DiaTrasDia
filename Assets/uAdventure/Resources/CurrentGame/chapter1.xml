@@ -161,6 +161,7 @@
         </documentation>
         <condition>
           <inactive flag="IsInBathroom" />
+          <active flag="IrBathroom" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companero" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
@@ -174,6 +175,15 @@
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Bano" guid="f66041ac-5d5d-4c20-aaa0-655d4f5dd1c3" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <inactive flag="IrBathroom" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Previa_Companero" guid="a675a9e5-c61b-421f-af86-c14b6afd33ee" />
           <condition />
         </effect>
       </talk-to>
@@ -215,6 +225,7 @@
         </documentation>
         <condition>
           <inactive flag="IsInBathroom" />
+          <active flag="IrBathroom" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companera" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
@@ -227,6 +238,16 @@
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Bano" guid="08b76726-278c-4865-b235-e11fbad0f178" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Precia_Companera</documentation>
+        <condition>
+          <inactive flag="IrBathroom" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Previa_Companera" guid="2d68a2a1-bccd-489b-88dd-f8e49ac82484" />
           <condition />
         </effect>
       </talk-to>
@@ -412,6 +433,15 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Bar</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Bar" guid="5a558bf8-28b2-4029-bda3-c13d178e05cd" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <scene id="Inicio" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -974,6 +1004,46 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="Conversacion_Previa_Companera">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>Hola, ¿cómo estas?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Bien, ¿y tú?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>Bien también, gracias</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Previa_Companero">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>Hola, ¿cómo estas?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Bien, ¿y tú?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>Bien también, gracias</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <graph-conversation id="Conversacion_Bano">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="MaleCoworker">
@@ -1007,7 +1077,6 @@
           <equals var="Gender" value="-1" />
           <equals var="Gender" value="0" />
         </either>
-        <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
@@ -1016,7 +1085,6 @@
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Pronouns" value="1" />
-        <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
@@ -1024,8 +1092,7 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="1" />
-        <equals var="Bottom" value="-1" />
-        <active flag="IrBathroom" />
+        <equals var="Pronouns" value="-1" />
       </condition>
       <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
@@ -1034,7 +1101,6 @@
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Pronouns" value="0" />
-        <active flag="IrBathroom" />
       </condition>
       <end-conversation>
         <effect>
@@ -1053,11 +1119,7 @@
         <text>¿Por qué te metes en el baño de los hombres?</text>
       </speak-char>
       <condition>
-        <either>
-          <equals var="Gender" value="1" />
-          <active flag="a" />
-        </either>
-        <active flag="IrBathroom" />
+        <equals var="Gender" value="1" />
       </condition>
       <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
@@ -1069,19 +1131,6 @@
           <equals var="Gender" value="0" />
         </either>
         <equals var="Pronouns" value="-1" />
-        <active flag="IrBathroom" />
-      </condition>
-      <speak-char idTarget="FemaleCoworker">
-        <resources name="No name" />
-        <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
-      </speak-char>
-      <condition>
-        <either>
-          <equals var="Gender" value="-1" />
-          <equals var="Gender" value="0" />
-        </either>
-        <equals var="Pronouns" value="1" />
-        <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
@@ -1094,6 +1143,17 @@
         </either>
         <equals var="Pronouns" value="0" />
         <active flag="IrBathroom" />
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
+      </speak-char>
+      <condition>
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
+        <equals var="Pronouns" value="1" />
       </condition>
       <end-conversation>
         <effect>
@@ -1381,6 +1441,31 @@
       </end-conversation>
     </dialogue-node>
     <dialogue-node nodeindex="3" editor-x="815" editor-y="241">
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Bar">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Hola buenas, qué quería</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Póngame una cerveza, por favor</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Aquí tiene</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Muchas gracias</text>
+      </speak-player>
+      <condition />
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
