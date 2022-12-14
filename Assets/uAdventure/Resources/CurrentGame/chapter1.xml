@@ -524,7 +524,7 @@
       <object-ref idTarget="TShirtDare" x="67" y="266" scale="0.3023721" glow="no" layer="5" hasInfluenceArea="no" />
       <object-ref idTarget="Skirt" x="419" y="119" scale="0.189228" glow="no" layer="1" hasInfluenceArea="no" />
       <object-ref idTarget="Pants" x="522" y="168" scale="0.13624" glow="no" layer="2" hasInfluenceArea="no" />
-      <object-ref idTarget="RopaArrow" x="524" y="353" scale="0.3247602" glow="no" layer="6" hasInfluenceArea="no" />
+      <object-ref idTarget="RopaArrow" x="532" y="361" scale="0.3247602" glow="no" layer="6" hasInfluenceArea="no" />
     </objects>
   </scene>
   <scene id="Pasillo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -798,6 +798,103 @@
       <character-ref idTarget="BarPerson" x="980" y="1166" scale="0.3474948" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
+  <graph-conversation id="IrTrabajo">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Viernes, ¡por fin!</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Toca ir a trabajar</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionIrTrabajo" guid="c32b256a-fd7e-4752-a47c-7d61630e9983" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="MenuEspejo">
+    <dialogue-node nodeindex="0" editor-x="11" editor-y="108">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Cambiarme de ropa?</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="421" editor-y="119" x="421" y="119">
+      <speak-player>
+        <text>Si</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>No</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="892" editor-y="108">
+      <speak-player>
+        <resources name="No name" />
+        <text>Si, voy a cambiarme</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Ropa" x="400" y="450" transitionTime="2" transitionType="5" guid="9c989a3b-3f90-4e68-8b7a-81a8a8710cd9" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="913" editor-y="321">
+      <speak-player>
+        <resources name="No name" />
+        <text>No, ahora no me apetece</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="RopaSalir">
+    <dialogue-node nodeindex="0" editor-x="201" editor-y="56">
+      <speak-player>
+        <resources name="No name" />
+        <text>Debería terminar de vestirme</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="NoSalir">
+    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
+      <speak-player>
+        <resources name="No name" />
+        <text>No debería de salir de casa sin vestirme</text>
+      </speak-player>
+      <condition>
+        <equals var="Bottom" value="0" />
+        <equals var="Top" value="0" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>* Haz click en el perchero para vestirte *</text>
+      </speak-player>
+      <condition>
+        <equals var="Top" value="0" />
+        <equals var="Bottom" value="0" />
+        <inactive flag="ExitWork" />
+      </condition>
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <graph-conversation id="Conversacion">
     <dialogue-node nodeindex="0" editor-x="141" editor-y="144">
       <speak-char idTarget="Conciudadano">
@@ -867,115 +964,26 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="MenuEspejo">
-    <dialogue-node nodeindex="0" editor-x="11" editor-y="108">
-      <speak-player>
+  <graph-conversation id="Conversacion_Bano">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
-        <text>¿Cambiarme de ropa?</text>
-      </speak-player>
-      <condition />
-      <child nodeindex="1" />
-    </dialogue-node>
-    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="421" editor-y="119" x="421" y="119">
-      <speak-player>
-        <text>Si</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="2" />
-      <speak-player>
-        <text>No</text>
-        <resources name="No name" />
-      </speak-player>
-      <condition />
-      <child nodeindex="3" />
-    </option-node>
-    <dialogue-node nodeindex="2" editor-x="892" editor-y="108">
-      <speak-player>
-        <resources name="No name" />
-        <text>Si, voy a cambiarme</text>
-      </speak-player>
-      <condition />
-      <end-conversation>
-        <effect>
-          <trigger-scene idTarget="Ropa" x="400" y="450" transitionTime="2" transitionType="5" guid="9c989a3b-3f90-4e68-8b7a-81a8a8710cd9" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="913" editor-y="321">
-      <speak-player>
-        <resources name="No name" />
-        <text>No, ahora no me apetece</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="NoSalir">
-    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
-      <speak-player>
-        <resources name="No name" />
-        <text>No debería de salir de casa sin vestirme</text>
-      </speak-player>
-      <condition>
-        <equals var="Bottom" value="0" />
-        <equals var="Top" value="0" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>* Haz click en el perchero para vestirte *</text>
-      </speak-player>
-      <condition>
-        <equals var="Top" value="0" />
-        <equals var="Bottom" value="0" />
-        <inactive flag="ExitWork" />
-      </condition>
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="RopaSalir">
-    <dialogue-node nodeindex="0" editor-x="201" editor-y="56">
-      <speak-player>
-        <resources name="No name" />
-        <text>Debería terminar de vestirme</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="Conversacion_Super">
-    <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Son 18.50€, muchas gracias por venir</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Y que lo que te diga Gertrudis no te afecte</text>
+        <text>Hola, buenas</text>
       </speak-char>
       <condition>
-        <active flag="ConversacionSenoraSuper" />
+        <equals var="Gender" value="1" />
       </condition>
-      <speak-char idTarget="Cajero">
+      <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
-        <text>que está ya vieja y le cuestan estas cosas</text>
+        <text>Hola, buenas</text>
       </speak-char>
       <condition>
-        <active flag="ConversacionSenoraSuper" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
       </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>Muchas gracias.</text>
-      </speak-player>
-      <condition />
-      <end-conversation>
-        <effect>
-          <activate flag="ConversacionCajeroSuper" guid="e5295a4a-7946-4446-aac6-2ddb4e75b7fb" />
-          <condition />
-        </effect>
-      </end-conversation>
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Companero">
@@ -1087,6 +1095,21 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="IrSupermercado">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O No queda nada en la nevera</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Tendré que ir a hacer la compra...</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <graph-conversation id="Conversation_Senora_Super">
     <dialogue-node nodeindex="0" editor-x="91" editor-y="3">
       <speak-char idTarget="OldLady">
@@ -1094,14 +1117,14 @@
         <text>Señorita, iba yo antes, no se cuele, por favor</text>
       </speak-char>
       <condition>
-        <equals var="Bottom" value="1" />
+        <less-than var="Presentacion" value="0" />
       </condition>
       <speak-char idTarget="OldLady">
         <resources name="No name" />
         <text>Señorito, iba yo antes, no se cuele, por favor</text>
       </speak-char>
       <condition>
-        <not-equals var="Bottom" value="1" />
+        <greater-equals-than var="Presentacion" value="0" />
       </condition>
       <speak-char idTarget="Cajero">
         <resources name="No name" />
@@ -1109,7 +1132,7 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="1" />
-        <equals var="Bottom" value="1" />
+        <less-than var="Presentacion" value="0" />
       </condition>
       <speak-char idTarget="Cajero">
         <resources name="No name" />
@@ -1124,7 +1147,7 @@
       </speak-char>
       <condition>
         <equals var="Gender" value="-1" />
-        <not-equals var="Bottom" value="1" />
+        <greater-equals-than var="Presentacion" value="0" />
       </condition>
       <speak-char idTarget="OldLady">
         <resources name="No name" />
@@ -1138,10 +1161,8 @@
         <text>No lo entiendo, pero disculpe</text>
       </speak-char>
       <condition>
-        <either>
-          <equals var="Gender" value="1" />
-          <equals var="Bottom" value="1" />
-        </either>
+        <equals var="Gender" value="1" />
+        <less-than var="Presentacion" value="0" />
       </condition>
       <speak-char idTarget="OldLady">
         <resources name="No name" />
@@ -1149,35 +1170,94 @@
       </speak-char>
       <condition>
         <not-equals var="Bottom" value="1" />
-        <equals var="Gender" value="-1" />
+        <greater-than var="Presentacion" value="0" />
       </condition>
       <end-conversation>
         <effect>
-          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
+          <activate flag="ConversacionSenoraSuper" guid="38f84bc4-e8aa-460f-ba88-4c1d9a0fac0b" />
           <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="Conversacion_Bano">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-char idTarget="MaleCoworker">
+  <graph-conversation id="Conversacion_Super">
+    <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
-        <text>Hola, buenas</text>
+        <text>Son 18.50€, muchas gracias por venir</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Y que lo que te diga Gertrudis no te afecte</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Y que lo que te diga Gertrudis no te afecte</text>
       </speak-char>
       <condition>
         <equals var="Gender" value="1" />
+        <less-than var="Presentacion" value="0" />
       </condition>
-      <speak-char idTarget="FemaleCoworker">
+      <speak-char idTarget="Cajero">
         <resources name="No name" />
-        <text>Hola, buenas</text>
+        <text>Y que lo que te diga Gertrudis no te afecte</text>
       </speak-char>
       <condition>
-        <either>
-          <equals var="Gender" value="-1" />
-          <equals var="Gender" value="0" />
-        </either>
+        <equals var="Gender" value="-1" />
+        <greater-equals-than var="Presentacion" value="0" />
       </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>que está ya vieja y le cuestan estas cosas</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>que está ya vieja y le cuestan estas cosas</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+        <less-than var="Presentacion" value="0" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>que está ya vieja y le cuestan estas cosas</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <greater-equals-than var="Presentacion" value="0" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Muchas gracias.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionCajeroSuper" guid="e5295a4a-7946-4446-aac6-2ddb4e75b7fb" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="IrBar">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Había quedado para ir al bar</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O ¡Que ganas de ver a Pablo y Ana!</text>
+      </speak-player>
+      <condition />
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -1250,59 +1330,9 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="IrTrabajo">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Viernes, ¡por fin!</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Toca ir a trabajar</text>
-      </speak-player>
-      <condition />
-      <end-conversation>
-        <effect>
-          <activate flag="ConversacionIrTrabajo" guid="c32b256a-fd7e-4752-a47c-7d61630e9983" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="IrSupermercado">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O No queda nada en la nevera</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Tendré que ir a hacer la compra...</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="IrBar">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Había quedado para ir al bar</text>
-      </speak-player>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>#O ¡Que ganas de ver a Pablo y Ana!</text>
-      </speak-player>
-      <condition />
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
-      <asset type="image" uri="assets/image/Sin título.png" />
+      <asset type="image" uri="assets/image/flecha.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
     </resources>
     <description>
