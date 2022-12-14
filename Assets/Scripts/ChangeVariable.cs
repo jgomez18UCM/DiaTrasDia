@@ -15,6 +15,25 @@ public class ChangeVariable : MonoBehaviour
         }));
     }
 
+    public void Add(string variable) 
+    {
+        if(value > 0) 
+        {
+            Game.Instance.Execute(new EffectHolder(new Effects{
+                new IncrementVarEffect(variable, value)
+            }));
+        }
+
+        else if(value < 0) 
+        {
+            value = Mathf.Abs(value);
+            Game.Instance.Execute(new EffectHolder(new Effects{
+                new DecrementVarEffect(variable, value)
+            }));
+        }
+
+    }
+
     public void SetValue(int v) 
     {
         value = v;
