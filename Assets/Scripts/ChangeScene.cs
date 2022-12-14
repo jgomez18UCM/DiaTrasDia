@@ -12,4 +12,9 @@ public class ChangeScene : MonoBehaviour
                 new TriggerSceneEffect(scene,0,0)
         }));
     }
+
+    public void ExitGame() 
+    {
+        Application.Quit();
+    }
 }
