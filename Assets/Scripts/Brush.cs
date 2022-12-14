@@ -10,7 +10,6 @@ public class Brush : MonoBehaviour
     [SerializeField] Color color;
     [Range(0.1f, 0.6f)] public float radius;
     [Range(0.1f, 1f)] public float harshness;
-    [SerializeField] int currentBrush;
     [SerializeField] int numberOfPoints;
 
     [SerializeField] float z;
@@ -70,4 +69,12 @@ public class Brush : MonoBehaviour
 
         else makeup.setPainting(false);
     }
+
+    public void setColor(Color c) { color = c; }
+
+    public void setHarshness(float h) { harshness = h; }
+
+    public void setRadius(float r) { radius = r; }
+
+    public float getRadius() { return radius; }
 }
