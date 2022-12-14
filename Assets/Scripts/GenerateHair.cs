@@ -12,7 +12,10 @@ public class GenerateHair : MonoBehaviour
     [SerializeField] float startingWidth;
     [SerializeField] float endingWidth;
     [SerializeField] (Vector3, Vector3)[] hairPositions;
+    [SerializeField] float shavedPercentage;
     [SerializeField] GameObject[] hairRendererObjects;
+
+    int shavedHairs = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -72,10 +75,16 @@ public class GenerateHair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shavedHairs = 0;
+
         int i = 0;
         foreach (GameObject h in hairRendererObjects)
         {
+
             LineRenderer l = h.GetComponent<LineRenderer>();
+
+            if (!l.isVisible) shavedHairs++;
+
             l.startColor = Color.black;
             l.endColor = Color.black;
             l.startWidth = startingWidth;
@@ -83,5 +92,14 @@ public class GenerateHair : MonoBehaviour
 
             i++;
         }
+
+        shavedPercentage = ((float)shavedHairs / numberOfHairs) * 100; 
+    }
+
+    public void setPresentation()
+    {
+        int p = 3 - (int)Mathf.Min(shavedPercentage / 30, 3f);
+        GetComponent<ChangeVariable>().SetValue(p);
+        GetComponent<ChangeVariable>().Add("Presentacion");
     }
 }

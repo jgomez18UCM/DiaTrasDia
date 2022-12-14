@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment> Project Configuration </comment>
-<entry key="Chapter0.Casa.X">551</entry>
-<entry key="Chapter0.Casa.Y">96</entry>
-<entry key="Chapter0.Trabajo.X">182</entry>
-<entry key="Chapter0.Trabajo.Y">-9</entry>
+<entry key="Chapter0.Casa.X">863</entry>
+<entry key="Chapter0.Casa.Y">169</entry>
+<entry key="Chapter0.Trabajo.X">44</entry>
+<entry key="Chapter0.Trabajo.Y">-22</entry>
 <entry key="Chapter0.Calle.X">385</entry>
 <entry key="Chapter0.Calle.Y">-23</entry>
-<entry key="Chapter0.Ropa.X">1013</entry>
-<entry key="Chapter0.Ropa.Y">113</entry>
+<entry key="Chapter0.Ropa.X">763</entry>
+<entry key="Chapter0.Ropa.Y">23</entry>
 <entry key="Chapter0.Calle2.X">333</entry>
 <entry key="Chapter0.Calle2.Y">123</entry>
-<entry key="Chapter0.Supermercado.X">97</entry>
-<entry key="Chapter0.Supermercado.Y">186</entry>
+<entry key="Chapter0.Supermercado.X">53</entry>
+<entry key="Chapter0.Supermercado.Y">210</entry>
 <entry key="Chapter0.Calle3.X">347</entry>
 <entry key="Chapter0.Calle3.Y">285</entry>
-<entry key="Chapter0.Bar.X">68</entry>
-<entry key="Chapter0.Bar.Y">346</entry>
+<entry key="Chapter0.Bar.X">-106</entry>
+<entry key="Chapter0.Bar.Y">362</entry>
 <entry key="Chapter0.MenuPersonalizacion.X">-196</entry>
 <entry key="Chapter0.MenuPersonalizacion.Y">20</entry>
-<entry key="Chapter0.Calle_Trabajo.X">-98</entry>
-<entry key="Chapter0.Calle_Trabajo.Y">128</entry>
-<entry key="Chapter0.Calle_Super.X">35</entry>
-<entry key="Chapter0.Calle_Super.Y">79</entry>
+<entry key="Chapter0.Calle_Trabajo.X">438</entry>
+<entry key="Chapter0.Calle_Trabajo.Y">-1</entry>
+<entry key="Chapter0.Calle_Super.X">372</entry>
+<entry key="Chapter0.Calle_Super.Y">175</entry>
+<entry key="Chapter0.Inicio.X">915</entry>
+<entry key="Chapter0.Inicio.Y">-68</entry>
+<entry key="Chapter0.Pasillo.X">666</entry>
+<entry key="Chapter0.Pasillo.Y">209</entry>
+<entry key="Chapter0.Bano.X">731</entry>
+<entry key="Chapter0.Bano.Y">417</entry>
+<entry key="Chapter0.WorkBathroom.X">-408</entry>
+<entry key="Chapter0.WorkBathroom.Y">21</entry>
+<entry key="Chapter0.Calle_Bar.X">395</entry>
+<entry key="Chapter0.Calle_Bar.Y">397</entry>
 </properties>
 

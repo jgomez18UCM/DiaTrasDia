@@ -17,7 +17,7 @@
       <asset type="walkright" uri="assets/special/EmptyAnimation" />
       <asset type="walkleft" uri="assets/special/EmptyAnimation" />
     </resources>
-    <textcolor showsSpeechBubble="yes" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
       <frontcolor color="#FFFFFF" />
       <bordercolor color="#000000" />
     </textcolor>
@@ -64,19 +64,19 @@
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <condition>
-          <inactive flag="ConversacionConciudadano" />
+          <inactive flag="a" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion" guid="a782d9e9-e3da-4356-8683-e43ba02f3b9b" />
           <condition />
-          <activate flag="ConversacionConciudadano" guid="3d414f32-98d4-4f0f-9c03-dfd29ee81b71" />
+          <activate flag="a" guid="3d414f32-98d4-4f0f-9c03-dfd29ee81b71" />
           <condition />
         </effect>
       </talk-to>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Created with target conversation: c2</documentation>
         <condition>
-          <active flag="ConversacionConciudadano" />
+          <active flag="a" />
         </condition>
         <effect>
           <trigger-conversation idTarget="c2" guid="3aa9a651-a57e-4ab5-a0dc-3d7b5e9352e4" />
@@ -448,12 +448,13 @@
     </documentation>
     <resources name="">
       <asset type="background" uri="assets/background/Bedroom_Day.png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-6" y="980" width="1933" height="105" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-6" y="956" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <not-effect>
           <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
@@ -461,6 +462,9 @@
         </not-effect>
       </exit>
     </exits>
+    <objects>
+      <object-ref idTarget="DownArrow" x="975" y="1072" scale="0.5136824" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
     <active-areas>
       <active-area id="IrRopa" rectangular="yes" x="1160" y="265" width="226" height="282" hasInfluenceArea="no" behaviour="first-action">
         <description>
@@ -480,7 +484,7 @@
           </use>
         </actions>
       </active-area>
-      <active-area id="IrTrabajoArea" rectangular="yes" x="7" y="-12" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="IrTrabajoArea" rectangular="yes" x="-8" y="-10" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <inactive flag="ConversacionIrTrabajo" />
         </condition>
@@ -513,6 +517,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/360_F_508856526_6yEL5VTLs3BZG5pfYwP6K2wjEjUOlFBM.jpg" />
+      <asset type="bgmusic" uri="" />
     </resources>
     <name>
     </name>
@@ -532,6 +537,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/Pasillo.jpg" />
+      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
     </resources>
     <name>
     </name>
@@ -580,21 +586,24 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/Bathroom_DayTime.png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-8" y="962" width="1928" height="107" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="-8" y="930" width="1932" height="139" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Maquinilla" x="1735" y="877" scale="0.9256302" glow="no" layer="0" hasInfluenceArea="no">
+      <object-ref idTarget="Maquinilla" x="1738" y="861" scale="0.9256302" glow="no" layer="2" hasInfluenceArea="no">
         <condition>
           <inactive flag="Maquinilla" />
         </condition>
       </object-ref>
+      <object-ref idTarget="BolsaMaquillaje" x="653" y="742" scale="0.2384137" glow="no" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="DownArrow" x="962" y="1064" scale="0.546314" glow="no" layer="1" hasInfluenceArea="no" />
     </objects>
   </scene>
   <scene id="Calle_Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -607,12 +616,12 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="333" y="371" width="438" height="111" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="365" y="387" width="438" height="111" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Conciudadano" x="194" y="684" scale="0.1983637" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Conciudadano" x="262" y="684" scale="0.1959507" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -737,7 +746,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="794" y="461" width="89" height="37" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="794" y="449" width="107" height="57" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ConversacionCajeroSuper" />
@@ -751,11 +760,12 @@
       </exit>
     </exits>
     <objects>
-      <object-ref idTarget="Boton" x="839" y="498" scale="0.1171266" glow="no" layer="3" hasInfluenceArea="no">
+      <object-ref idTarget="Boton" x="842" y="513" scale="0.2963783" glow="no" layer="3" hasInfluenceArea="no">
         <condition>
           <active flag="ConversacionCajeroSuper" />
         </condition>
       </object-ref>
+      <object-ref idTarget="CajaRegistradora" x="675" y="507" scale="1" glow="no" layer="2" hasInfluenceArea="no" />
     </objects>
     <characters>
       <character-ref idTarget="Cajero" x="745" y="511" scale="0.1702027" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
@@ -776,13 +786,13 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="317" y="416" width="167" height="81" hasInfluenceArea="no" idTarget="Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="317" y="416" width="208" height="81" hasInfluenceArea="no" idTarget="Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="Friend1" x="134" y="748" scale="0.2751176" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="Friend2" x="641" y="719" scale="0.272061" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend1" x="158" y="742" scale="0.2751176" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Friend2" x="688" y="717" scale="0.272061" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
   </scene>
   <scene id="Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -1045,7 +1055,7 @@
       <condition>
         <either>
           <equals var="Gender" value="1" />
-          <equals var="Gender" value="0" />
+          <active flag="a" />
         </either>
         <active flag="IrBathroom" />
       </condition>
@@ -1184,7 +1194,7 @@
     <dialogue-node nodeindex="0" editor-x="81" editor-y="215">
       <speak-char idTarget="Cajero">
         <resources name="No name" />
-        <text>Son 18.50€, ¡muchas gracias por venir!</text>
+        <text>Son 18.50€, muchas gracias por venir</text>
       </speak-char>
       <condition />
       <speak-char idTarget="Cajero">
@@ -1327,6 +1337,50 @@
         <text>Que ya han pasado varios años.</text>
       </speak-player>
       <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Maquillarse">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Quiero maquillarme?</text>
+      </speak-player>
+      <condition>
+        <inactive flag="Maquillaje" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Me vuelvo a maquillar?</text>
+      </speak-player>
+      <condition>
+        <active flag="Maquillaje" />
+      </condition>
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="595" editor-y="50" x="595" y="50">
+      <speak-player>
+        <text>Si</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>No</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="815" editor-y="50">
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Maquillaje" x="960" y="810" transitionTime="0" transitionType="0" guid="358dc3a9-e794-4784-94c7-1c5963d4b1b6" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="815" editor-y="241">
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -1608,7 +1662,7 @@
   </object>
   <object id="Boton" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="Boton">
-      <asset type="image" uri="assets/image/Exit.jpg" />
+      <asset type="image" uri="assets/image/flecha.png" />
       <asset type="icon" uri="assets/icon/Exit.jpg" />
     </resources>
     <description>
@@ -1642,6 +1696,56 @@
         </effect>
       </use>
     </actions>
+  </object>
+  <object id="BolsaMaquillaje" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/MakeupBag.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="Maquillarse" guid="ce3b4d12-afa4-4fe9-9594-f4526b1abcef" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="CajaRegistradora" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/RegisterForeground.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <object id="DownArrow" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/flechaAbajo.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
   </object>
   <unity-scene id="Afeitado" scene="Assets/Scenes/Afeitar.unity" />
   <unity-scene id="MenuPersonalizacion" scene="Assets/Scenes/PersonalizationMenu.unity" />
