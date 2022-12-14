@@ -547,7 +547,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/360_F_508856526_6yEL5VTLs3BZG5pfYwP6K2wjEjUOlFBM.jpg" />
-      <asset type="bgmusic" uri="" />
+      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
     </resources>
     <name>
     </name>
@@ -1113,7 +1113,7 @@
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Companera">
-    <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
+    <dialogue-node nodeindex="0" editor-x="74" editor-y="40">
       <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
         <text>¿Por qué te metes en el baño de los hombres?</text>
@@ -1418,7 +1418,7 @@
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="595" editor-y="50" x="595" y="50">
+    <option-node nodeindex="1" preListening="yes" editor-x="457" editor-y="50" x="457" y="50">
       <speak-player>
         <text>Si</text>
         <resources name="No name" />
@@ -1432,7 +1432,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="815" editor-y="50">
+    <dialogue-node nodeindex="2" editor-x="796" editor-y="15">
       <end-conversation>
         <effect>
           <trigger-scene idTarget="Maquillaje" x="960" y="810" transitionTime="0" transitionType="0" guid="358dc3a9-e794-4784-94c7-1c5963d4b1b6" />
@@ -1440,7 +1440,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="815" editor-y="241">
+    <dialogue-node nodeindex="3" editor-x="785" editor-y="198">
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -1466,7 +1466,12 @@
         <text>Muchas gracias</text>
       </speak-player>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="MainMenu" x="960" y="810" transitionTime="0" transitionType="0" guid="4091bd7d-4413-411b-8268-720085ea6dbf" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
