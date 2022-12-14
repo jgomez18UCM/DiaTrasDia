@@ -19,4 +19,18 @@ public class ChangeVariable : MonoBehaviour
     {
         value = v;
     }
+
+    public void ActivaFlag(string name)
+    {
+        Game.Instance.Execute(new EffectHolder(new Effects{
+                new ActivateEffect(name)
+        }));
+    }
+
+    public void DesactivaFlag(string name)
+    {
+        Game.Instance.Execute(new EffectHolder(new Effects{
+                new DeactivateEffect(name)
+        }));
+    }
 }

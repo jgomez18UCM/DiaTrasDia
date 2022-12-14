@@ -413,54 +413,6 @@
     </description>
     <voice name="" synthesizeAlways="no" />
   </character>
-  <scene id="Pasillo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
-    <documentation>
-    </documentation>
-    <resources name="No name">
-      <asset type="background" uri="assets/background/Pasillo.jpg" />
-    </resources>
-    <name>
-    </name>
-    <default-initial-position x="400" y="450" />
-    <exits>
-      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-      </exit>
-      <exit rectangular="yes" x="258" y="165" width="49" height="249" hasInfluenceArea="no" idTarget="Baño" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-      </exit>
-      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <not-equals var="Bottom" value="0" />
-          <not-equals var="Top" value="0" />
-          <inactive flag="ExitWork" />
-        </condition>
-        <not-effect>
-          <trigger-conversation idTarget="NoSalir" guid="043c7da0-968b-4a40-a9ac-8c2a548c980d" />
-          <condition />
-        </not-effect>
-      </exit>
-      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <not-equals var="Bottom" value="0" />
-          <not-equals var="Top" value="0" />
-          <active flag="ExitWork" />
-          <inactive flag="ExitMarket" />
-        </condition>
-      </exit>
-      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <condition>
-          <not-equals var="Bottom" value="0" />
-          <not-equals var="Top" value="0" />
-          <active flag="ExitMarket" />
-          <active flag="ExitWork" />
-        </condition>
-      </exit>
-    </exits>
-  </scene>
   <scene id="MenuPersonalizacion" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -578,6 +530,76 @@
       <object-ref idTarget="RopaArrow" x="524" y="353" scale="0.3247602" glow="no" layer="6" hasInfluenceArea="no" />
     </objects>
   </scene>
+  <scene id="Pasillo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Pasillo.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="258" y="165" width="49" height="249" hasInfluenceArea="no" idTarget="Bano" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <inactive flag="ExitWork" />
+        </condition>
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="043c7da0-968b-4a40-a9ac-8c2a548c980d" />
+          <condition />
+        </not-effect>
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Super" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <active flag="ExitWork" />
+          <inactive flag="ExitMarket" />
+        </condition>
+      </exit>
+      <exit rectangular="yes" x="101" y="165" width="100" height="187" hasInfluenceArea="no" idTarget="Calle_Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <not-equals var="Bottom" value="0" />
+          <not-equals var="Top" value="0" />
+          <active flag="ExitMarket" />
+          <active flag="ExitWork" />
+        </condition>
+      </exit>
+    </exits>
+  </scene>
+  <scene id="Bano" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Bathroom_DayTime.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="-8" y="962" width="1928" height="107" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+      </exit>
+    </exits>
+    <objects>
+      <object-ref idTarget="Maquinilla" x="1796" y="918" scale="0.8143073" glow="no" layer="0" hasInfluenceArea="no">
+        <condition>
+          <inactive flag="Maquinilla" />
+        </condition>
+      </object-ref>
+    </objects>
+  </scene>
   <scene id="Calle_Trabajo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
@@ -649,12 +671,8 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="no" x="1032" y="351" width="128" height="256" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="1032" y="351" width="128" height="256" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
-        <point x="1032" y="351" />
-        <point x="1155" y="351" />
-        <point x="1160" y="607" />
-        <point x="1032" y="585" />
         <effect>
           <activate flag="IrBathroom" guid="c897c6dd-0da5-4e59-9266-8eed23a05ab1" />
           <condition />
@@ -668,7 +686,10 @@
           </condition>
           <trigger-conversation idTarget="Conversacion_Companero" guid="38262538-54b0-48b5-bcf8-6e78204d8dde" />
           <condition>
-            <equals var="Gender" value="-1" />
+            <either>
+              <equals var="Gender" value="-1" />
+              <equals var="Gender" value="0" />
+            </either>
           </condition>
         </post-effect>
       </exit>
@@ -681,7 +702,10 @@
       </character-ref>
       <character-ref idTarget="FemaleCoworker" x="815" y="956" scale="0.3779457" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
         <condition>
-          <equals var="Gender" value="-1" />
+          <either>
+            <equals var="Gender" value="-1" />
+            <equals var="Gender" value="0" />
+          </either>
         </condition>
       </character-ref>
     </characters>
@@ -1087,7 +1111,10 @@
         <text>¿Por qué te metes en el baño de las mujeres?</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
         <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="MaleCoworker">
@@ -1099,19 +1126,19 @@
         <equals var="Pronouns" value="1" />
         <active flag="IrBathroom" />
       </condition>
-      <speak-player>
+      <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
         <text>No hagas caso a Penelope, entra al baño donde más cómoda te sientas.</text>
-      </speak-player>
+      </speak-char>
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Bottom" value="-1" />
         <active flag="IrBathroom" />
       </condition>
-      <speak-player>
+      <speak-char idTarget="MaleCoworker">
         <resources name="No name" />
         <text>No hagas caso a Penelope, entra al baño donde más cómode te sientas.</text>
-      </speak-player>
+      </speak-char>
       <condition>
         <equals var="Gender" value="1" />
         <equals var="Pronouns" value="0" />
@@ -1127,49 +1154,6 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="Conversation_Senora_Super">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>Señorita, iba yo antes, no se cuele, por favor</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Gertrudis, [Player] es un hombre, no una mujer.</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="1" />
-      </condition>
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>Señorito, iba yo antes, no se cuele, por favor</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="-1" />
-      </condition>
-      <speak-char idTarget="Cajero">
-        <resources name="No name" />
-        <text>Gertrudis, [Player] es una mujer, no un hombre.</text>
-      </speak-char>
-      <condition>
-        <equals var="Gender" value="-1" />
-      </condition>
-      <speak-char idTarget="OldLady">
-        <resources name="No name" />
-        <text>No lo entiendo, pero disculpe</text>
-      </speak-char>
-      <condition />
-      <end-conversation>
-        <effect>
-          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
-          <condition />
-        </effect>
-      </end-conversation>
-    </dialogue-node>
-  </graph-conversation>
   <graph-conversation id="Conversacion_Companera">
     <dialogue-node nodeindex="0" editor-x="213" editor-y="68">
       <speak-char idTarget="FemaleCoworker">
@@ -1177,7 +1161,10 @@
         <text>¿Por qué te metes en el baño de los hombres?</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="1" />
+        <either>
+          <equals var="Gender" value="1" />
+          <active flag="a" />
+        </either>
         <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="FemaleCoworker">
@@ -1185,25 +1172,34 @@
         <text>No hagas caso a Marcos, entra al baño donde más cómoda te sientas.</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
         <equals var="Pronouns" value="-1" />
         <active flag="IrBathroom" />
       </condition>
-      <speak-player>
+      <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
         <text>No hagas caso a Marcos, entra al baño donde más cómodo te sientas.</text>
-      </speak-player>
+      </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
         <equals var="Pronouns" value="1" />
         <active flag="IrBathroom" />
       </condition>
-      <speak-player>
+      <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
         <text>No hagas caso a Marcos, entra al baño donde más cómode te sientas.</text>
-      </speak-player>
+      </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
         <equals var="Pronouns" value="0" />
         <active flag="IrBathroom" />
       </condition>
@@ -1213,6 +1209,78 @@
           <condition>
             <equals var="Gender" value="-1" />
           </condition>
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversation_Senora_Super">
+    <dialogue-node nodeindex="0" editor-x="91" editor-y="3">
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorita, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Bottom" value="1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>Señorito, iba yo antes, no se cuele, por favor</text>
+      </speak-char>
+      <condition>
+        <not-equals var="Bottom" value="1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, Alejandro es un hombre, no una mujer.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+        <equals var="Bottom" value="1" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, Alex no es ni un hombre ni una mujer, respétale por favor</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
+      <speak-char idTarget="Cajero">
+        <resources name="No name" />
+        <text>Gertrudis, Alejandra es una mujer, no un hombre.</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="-1" />
+        <not-equals var="Bottom" value="1" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>No lo entiendo, pero disculpe</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>No lo entiendo, pero disculpe</text>
+      </speak-char>
+      <condition>
+        <either>
+          <equals var="Gender" value="1" />
+          <equals var="Bottom" value="1" />
+        </either>
+      </condition>
+      <speak-char idTarget="OldLady">
+        <resources name="No name" />
+        <text>No lo entiendo, pero disculpe</text>
+      </speak-char>
+      <condition>
+        <not-equals var="Bottom" value="1" />
+        <equals var="Gender" value="-1" />
+      </condition>
+      <end-conversation>
+        <effect>
+          <activate flag="ConversacionSenoraSuper" guid="cec6ba2d-e68f-4368-b0f3-38256def307b" />
+          <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
@@ -1231,7 +1299,10 @@
         <text>Hola, buenas</text>
       </speak-char>
       <condition>
-        <equals var="Gender" value="-1" />
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
       </condition>
       <end-conversation />
     </dialogue-node>
@@ -1667,6 +1738,29 @@
       </detailed>
     </description>
   </object>
+  <object id="Maquinilla" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/maquinilla.png" />
+      <asset type="icon" uri="assets/icon/maquinilla.png" />
+      <asset type="imageover" uri="assets/image/maquinilla.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="Afeitado" x="364" y="364" transitionTime="0" transitionType="0" guid="4666e20b-855c-4e7b-8cfa-6674f2a16b22" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
   <atrezzoobject id="Caja">
     <resources name="No name">
       <asset type="image" uri="assets/image/RegisterForeground.png" />
@@ -1681,7 +1775,7 @@
       </detailed>
     </description>
   </atrezzoobject>
-  <unity-scene id="Baño" scene="Assets/Scenes/Afeitar.unity" />
+  <unity-scene id="Afeitado" scene="Assets/Scenes/Afeitar.unity" />
   <unity-scene id="MenuPersonalizacionn" scene="Assets/Scenes/PersonalizationMenu.unity" />
   <unity-scene id="Maquillaje" scene="Assets/Scenes/Maquillar.unity" />
 </eAdventure>
