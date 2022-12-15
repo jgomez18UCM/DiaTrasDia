@@ -913,28 +913,6 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  <graph-conversation id="NoSalir">
-    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
-      <speak-player>
-        <resources name="No name" />
-        <text>No debería de salir de casa sin vestirme</text>
-      </speak-player>
-      <condition>
-        <equals var="Bottom" value="0" />
-        <equals var="Top" value="0" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>* Haz click en el perchero para vestirte *</text>
-      </speak-player>
-      <condition>
-        <equals var="Top" value="0" />
-        <equals var="Bottom" value="0" />
-        <inactive flag="ExitWork" />
-      </condition>
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
   <graph-conversation id="Conversacion">
     <dialogue-node nodeindex="0" editor-x="141" editor-y="144">
       <speak-char idTarget="Conciudadano">
@@ -963,7 +941,16 @@
         <resources name="No name" />
         <text>Que agradable sujeto</text>
       </speak-char>
-      <condition />
+      <condition>
+        <greater-equals-than var="Presentacion" value="0" />
+      </condition>
+      <speak-char idTarget="Conciudadano">
+        <resources name="No name" />
+        <text>Que agradable señorita</text>
+      </speak-char>
+      <condition>
+        <less-than var="Presentacion" value="0" />
+      </condition>
       <end-conversation>
         <effect>
           <set-value var="RespuestaConciudadano" value="2" guid="f2b51869-5262-42a6-ae84-daf0ef11a79f" />
@@ -1000,6 +987,28 @@
       </speak-char>
       <condition>
         <equals var="RespuestaConciudadano" value="2" />
+      </condition>
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="NoSalir">
+    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
+      <speak-player>
+        <resources name="No name" />
+        <text>No debería de salir de casa sin vestirme</text>
+      </speak-player>
+      <condition>
+        <equals var="Bottom" value="0" />
+        <equals var="Top" value="0" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>* Haz click en el perchero para vestirte *</text>
+      </speak-player>
+      <condition>
+        <equals var="Top" value="0" />
+        <equals var="Bottom" value="0" />
+        <inactive flag="ExitWork" />
       </condition>
       <end-conversation />
     </dialogue-node>
@@ -1448,7 +1457,7 @@
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="BarPerson">
         <resources name="No name" />
-        <text>Hola buenas, qué quería</text>
+        <text>Hola buenas, ¿qué quería?</text>
       </speak-char>
       <condition />
       <speak-player>
