@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using uAdventure.Core;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ namespace uAdventure.Runner
     {
         public GameObject Bubble_Prefab, Think_Prefab, Yell_Prefab, Config_Menu_Ref;
         public GameObject SaveButton, LoadButton, ResetButton;
+        public GameObject AudioSlider; 
 
         private static GUIManager instance;
         private GameObject bubble;
@@ -105,6 +107,10 @@ namespace uAdventure.Runner
                 get_talker = false;
                 Talk(line.getText(), talkerToFind);
             }
+
+            AudioSource[] sources = GameObject.FindObjectsOfType<AudioSource>();
+
+            foreach (AudioSource a in sources) a.volume = AudioSlider.GetComponent<Slider>().value;
         }
 
         public void SetCursor(string cursor)
