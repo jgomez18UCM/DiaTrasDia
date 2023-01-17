@@ -10,8 +10,10 @@ public class PaintMakeup : MonoBehaviour
     [SerializeField] public float[,] lerpValues;
     [SerializeField] Color fundationColor;
     [SerializeField] float paintedPercentage;
+    public PolygonCollider2D paintingArea;
 
     int paintedPixels = 0;
+    Vector2 pixelSize;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,9 @@ public class PaintMakeup : MonoBehaviour
         }
 
         makeupTexture.Apply();
+
+        Bounds bounds = gameObject.GetComponent<MeshFilter>().mesh.bounds;
+        pixelSize = new Vector2(bounds.size.x / (float)makeupTexture.width, bounds.size.z / (float)makeupTexture.height);
     }
 
     // Update is called once per frame
@@ -47,14 +52,8 @@ public class PaintMakeup : MonoBehaviour
 
     public void paintPixel(Vector2 pos, Color c, float radius, float harshness, bool edge) 
     {
-        Bounds bounds = gameObject.GetComponent<MeshFilter>().mesh.bounds;
-        Vector2 pixelSize = new Vector2(bounds.size.x / (float)makeupTexture.width, bounds.size.z / (float)makeupTexture.height);
-        Vector2 deltaPos = new Vector2(transform.position.x - pos.x, transform.position.y - pos.y);
-
-        int x = (int)(deltaPos.x / pixelSize.x);
-        int y = (int)(deltaPos.y / pixelSize.y);
-        x = (makeupTexture.width / 2) + x % makeupTexture.width;
-        y = (makeupTexture.height / 2) + y % makeupTexture.height;
+        int x = getPixelCoordinates(pos).Item1;
+        int y = getPixelCoordinates(pos).Item2;
 
         Color color;
 
@@ -66,33 +65,56 @@ public class PaintMakeup : MonoBehaviour
             {
                 for (int j = -area; j <= area; j++)
                 {
-                    Color pixelColor = makeupTexture.GetPixel(x + i, y + j);
+                    Vector2 p = new Vector2(pos.x + pixelSize.x * i, pos.y + pixelSize.y * j);
+                    (int, int) pixel = getPixelCoordinates(p);
 
-                    if (pixelColor.a != 0 && (c.r != pixelColor.r || c.g != pixelColor.g || c.b != pixelColor.b))
+                    if (paintingArea.OverlapPoint(p)) 
                     {
-                        lerpValues[x + i, y + j] += harshness / 1000f;
-                        color = Color.Lerp(pixelColor, c, lerpValues[x + i, y + j]);
+                        Color pixelColor = makeupTexture.GetPixel(pixel.Item1, pixel.Item2);
+
+                        if (pixelColor.a != 0 && (c.r != pixelColor.r || c.g != pixelColor.g || c.b != pixelColor.b))
+                        {
+                            lerpValues[pixel.Item1, pixel.Item2] += harshness / 1000f;
+                            color = Color.Lerp(pixelColor, c, lerpValues[pixel.Item1, pixel.Item2]);
+                        }
+                        else color = c;
+                        makeupTexture.SetPixel(pixel.Item1, pixel.Item2, color);
+
                     }
-                    else color = c;
-                    makeupTexture.SetPixel(x + i, y + j, color);
+
                 }
             }
         }
 
-        else
+        else if(paintingArea.OverlapPoint(pos))
         {
-            Color pixelColor = makeupTexture.GetPixel(x, y);
+            //Color pixelColor = makeupTexture.GetPixel(x, y);
 
-            if (pixelColor.a != 0 && (c.r != pixelColor.r || c.g != pixelColor.g || c.b != pixelColor.b))
-            {
-                lerpValues[x, y] += harshness / 1000f;
-                color = Color.Lerp(pixelColor, c, lerpValues[x, y]);
-            }
-            else color = c;
-            makeupTexture.SetPixel(x, y, color);
+            //if (pixelColor.a != 0 && (c.r != pixelColor.r || c.g != pixelColor.g || c.b != pixelColor.b))
+            //{
+            //    lerpValues[x, y] += harshness / 1000f;
+            //    color = Color.Lerp(pixelColor, c, lerpValues[x, y]);
+            //}
+
+            //else color = c;
+
+            //makeupTexture.SetPixel(x, y, color);
         }
 
+
         makeupTexture.Apply();
+    }
+
+    (int, int) getPixelCoordinates(Vector2 c) 
+    {
+        Vector2 deltaPos = new Vector2(transform.position.x - c.x, transform.position.y - c.y);
+
+        int x = (int)(deltaPos.x / pixelSize.x);
+        int y = (int)(deltaPos.y / pixelSize.y);
+        x = (makeupTexture.width / 2) + x % makeupTexture.width;
+        y = (makeupTexture.height / 2) + y % makeupTexture.height;
+
+        return (x, y);
     }
 
     public void setPainting(bool b) 

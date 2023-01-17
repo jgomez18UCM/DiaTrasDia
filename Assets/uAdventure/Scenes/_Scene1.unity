@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useSystemIO: 0
   forceScene: 0
-  editor_mode: 1
+  editor_mode: 0
   actionCanceled: 0
   gamePath: 
   gameName: 
