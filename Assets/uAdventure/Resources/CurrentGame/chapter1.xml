@@ -283,6 +283,15 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Boss</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Boss" guid="21b86218-4eb3-44df-afd3-a951d51f3f2b" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
   <character id="OldLady" behaviour="first-action">
     <resources name="No name">
@@ -680,12 +689,8 @@
           <condition />
         </post-effect>
       </exit>
-      <exit rectangular="no" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
-        <point x="1027" y="99" />
-        <point x="1194" y="54" />
-        <point x="1143" y="567" />
-        <point x="1003" y="502" />
         <effect>
           <activate flag="IsInBathroom" guid="7bcfaaa8-986a-4582-a904-5fa7dc04a405" />
           <condition />
@@ -693,9 +698,51 @@
       </exit>
     </exits>
     <characters>
-      <character-ref idTarget="FemaleCoworker" x="536" y="835" scale="0.3838131" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
-      <character-ref idTarget="MaleCoworker" x="812" y="852" scale="0.3676458" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
+      <character-ref idTarget="FemaleCoworker" x="426" y="844" scale="0.3838131" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="MaleCoworker" x="745" y="845" scale="0.3676458" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Boss" x="615" y="801" scale="0.3912933" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
+        <condition>
+          <active flag="ConvoTrabajo" />
+        </condition>
+      </character-ref>
     </characters>
+    <active-areas>
+      <active-area id="Convo" rectangular="yes" x="-1" y="-4" width="1605" height="904" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="IrBathroom" />
+          <inactive flag="ConvoTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Conversacion_Companera" guid="19a8fde6-afa7-4078-a445-4cceab7cb7dd" />
+              <condition>
+                <active flag="IrBathroom" />
+                <equals var="Gender" value="1" />
+              </condition>
+              <trigger-conversation idTarget="IrTrabajo" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
+              <condition>
+                <active flag="IrBathroom" />
+                <either>
+                  <equals var="Gender" value="-1" />
+                  <equals var="Gender" value="0" />
+                </either>
+              </condition>
+              <activate flag="ConvoTrabajo" guid="f68d4f81-6fb2-48bb-9e47-9a0dffbd01e5" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
   </scene>
   <scene id="WorkBathroom" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -715,19 +762,6 @@
           <deactivate flag="IsInBathroom" guid="88e16bfd-7111-48e1-b84f-bf22bc0d5fb4" />
           <condition />
         </effect>
-        <post-effect>
-          <trigger-conversation idTarget="Conversacion_Companera" guid="e39ece67-0767-4ec0-9f8c-5367c3e0171e" />
-          <condition>
-            <equals var="Gender" value="1" />
-          </condition>
-          <trigger-conversation idTarget="Conversacion_Companero" guid="38262538-54b0-48b5-bcf8-6e78204d8dde" />
-          <condition>
-            <either>
-              <equals var="Gender" value="-1" />
-              <equals var="Gender" value="0" />
-            </either>
-          </condition>
-        </post-effect>
       </exit>
     </exits>
     <characters>
@@ -758,10 +792,6 @@
     <exits>
       <exit rectangular="yes" x="342" y="358" width="351" height="113" hasInfluenceArea="no" idTarget="Supermercado" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
-        <post-effect>
-          <trigger-conversation idTarget="Conversation_Senora_Super" guid="3594fcfa-d138-4ec6-8f03-3b6471924224" />
-          <condition />
-        </post-effect>
       </exit>
     </exits>
   </scene>
@@ -805,6 +835,29 @@
         </condition>
       </character-ref>
     </characters>
+    <active-areas>
+      <active-area id="ActiveArea" rectangular="yes" x="-3" y="-1" width="900" height="505" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <inactive flag="ConversacionSenoraSuper" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Conversation_Senora_Super" guid="26ea16a0-38e3-49c6-902c-98e67df77387" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
   </scene>
   <scene id="Calle_Bar" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
@@ -1481,6 +1534,31 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Boss">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Perdone jefe, ¿ha oído lo que acaba de decirme?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Boss">
+        <resources name="No name" />
+        <text>Bueno...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Boss">
+        <resources name="No name" />
+        <text>En esta empresa no nos fijamos en la ideología</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Boss">
+        <resources name="No name" />
+        <text>Si tienen algún problema, solucionenlo entre ustedes</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
