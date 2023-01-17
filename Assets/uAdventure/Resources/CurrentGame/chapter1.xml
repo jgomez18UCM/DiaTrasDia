@@ -544,7 +544,7 @@
           </use>
         </actions>
       </active-area>
-      <active-area id="IrTrabajoArea" rectangular="yes" x="-8" y="-10" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="IrTrabajoArea" rectangular="yes" x="3" y="-2" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <inactive flag="ConversacionIrTrabajo" />
         </condition>
@@ -568,6 +568,27 @@
               <condition />
             </effect>
           </custom>
+        </actions>
+      </active-area>
+      <active-area id="IrCama" rectangular="yes" x="-5" y="0" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="Coversacion_Bar" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
+              <condition />
+            </effect>
+          </use>
         </actions>
       </active-area>
     </active-areas>
@@ -977,6 +998,29 @@
     <characters>
       <character-ref idTarget="BarPerson" x="980" y="1166" scale="0.3474948" orientation="2" glow="no" layer="0" hasInfluenceArea="no" />
     </characters>
+    <active-areas>
+      <active-area id="Salida" rectangular="yes" x="-8" y="-11" width="2056" height="1163" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="Coversacion_Bar" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="ce6d1fc0-f3c9-44cc-a12e-d63cfe1803c6" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
   </scene>
   <graph-conversation id="IrTrabajo">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
@@ -1690,6 +1734,52 @@
         </either>
       </condition>
       <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Salir_Bar">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Estoy cansado, debería de volver a casa.</text>
+      </speak-player>
+      <condition>
+        <equals var="Pronouns" value="1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Estoy cansada, debería de volver  a casa.</text>
+      </speak-player>
+      <condition>
+        <equals var="Pronouns" value="-1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Estoy cansade, debería de volver a casa.</text>
+      </speak-player>
+      <condition>
+        <equals var="Pronouns" value="0" />
+      </condition>
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Casa" x="960" y="810" transitionTime="0" transitionType="5" guid="15e992bd-1815-4a3b-96e2-e25c42967440" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Ir_Cama">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>#O En fin, otro día mas. A dormir que ya tengo sueño.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="Inicio" x="960" y="810" transitionTime="0" transitionType="0" guid="5436b91f-f959-43d8-b01f-a49ac6ab7b15" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
