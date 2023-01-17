@@ -162,6 +162,7 @@
         <condition>
           <inactive flag="IsInBathroom" />
           <active flag="IrBathroom" />
+          <inactive flag="Convo_Jefe" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companero" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
@@ -184,6 +185,16 @@
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Previa_Companero" guid="a675a9e5-c61b-421f-af86-c14b6afd33ee" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conv_Companero_PostJefe</documentation>
+        <condition>
+          <active flag="Convo_Jefe" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conv_Companero_PostJefe" guid="baa7106f-58ac-4869-be22-181209c1086b" />
           <condition />
         </effect>
       </talk-to>
@@ -226,6 +237,7 @@
         <condition>
           <inactive flag="IsInBathroom" />
           <active flag="IrBathroom" />
+          <inactive flag="Convo_Jefe" />
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Companera" guid="05c39924-2643-4449-ac13-e2fccf6f1929" />
@@ -248,6 +260,15 @@
         </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Previa_Companera" guid="2d68a2a1-bccd-489b-88dd-f8e49ac82484" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="Convo_Jefe" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conv_Companero_PostJefe" guid="a6fc3af5-85c1-4e20-aaa9-fc9e04475afb" />
           <condition />
         </effect>
       </talk-to>
@@ -487,7 +508,7 @@
     </documentation>
     <resources name="">
       <asset type="background" uri="assets/background/Bedroom_Day.png" />
-      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
@@ -556,7 +577,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/360_F_508856526_6yEL5VTLs3BZG5pfYwP6K2wjEjUOlFBM.jpg" />
-      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
@@ -576,7 +597,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/Pasillo.jpg" />
-      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
@@ -625,7 +646,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/Bathroom_DayTime.png" />
-      <asset type="bgmusic" uri="assets/audio/Ludum Dare 38 - Track 1.mp3" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
@@ -686,6 +707,8 @@
           <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
           <condition />
           <trigger-conversation idTarget="IrSupermercado" guid="126f4676-676c-4b5e-8d52-d4c4b2f1fada" />
+          <condition />
+          <play-sound uri="assets/audio/Ludum Dare 38 - Track 1.mp3" guid="5b6bfa09-633e-4b8f-ac4d-acd721c566bc" />
           <condition />
         </post-effect>
       </exit>
@@ -754,7 +777,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="1032" y="351" width="128" height="256" hasInfluenceArea="no" idTarget="Trabajo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="1032" y="351" width="128" height="256" hasInfluenceArea="no" idTarget="Trabajo1" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <effect>
           <activate flag="IrBathroom" guid="c897c6dd-0da5-4e59-9266-8eed23a05ab1" />
@@ -780,11 +803,95 @@
       </character-ref>
     </characters>
   </scene>
+  <scene id="Trabajo1" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/Office_BG (30).png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_28_-_Track_6_online-audio-converter.com.mp3" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="no" x="266" y="213" width="59" height="153" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <point x="266" y="213" />
+        <point x="306" y="215" />
+        <point x="325" y="354" />
+        <point x="290" y="366" />
+        <condition>
+          <active flag="IrBathroom" />
+        </condition>
+        <post-effect>
+          <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
+          <condition />
+          <trigger-conversation idTarget="IrSupermercado" guid="126f4676-676c-4b5e-8d52-d4c4b2f1fada" />
+          <condition />
+        </post-effect>
+      </exit>
+      <exit rectangular="yes" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <effect>
+          <activate flag="IsInBathroom" guid="7bcfaaa8-986a-4582-a904-5fa7dc04a405" />
+          <condition />
+        </effect>
+      </exit>
+    </exits>
+    <characters>
+      <character-ref idTarget="FemaleCoworker" x="426" y="844" scale="0.3838131" orientation="2" glow="no" layer="2" hasInfluenceArea="no" />
+      <character-ref idTarget="MaleCoworker" x="745" y="845" scale="0.3676458" orientation="2" glow="no" layer="1" hasInfluenceArea="no" />
+      <character-ref idTarget="Boss" x="615" y="801" scale="0.3912933" orientation="2" glow="no" layer="0" hasInfluenceArea="no">
+        <condition>
+          <active flag="ConvoTrabajo" />
+          <inactive flag="Convo_Jefe" />
+        </condition>
+      </character-ref>
+    </characters>
+    <active-areas>
+      <active-area id="Convo-497" rectangular="yes" x="-1" y="-4" width="1605" height="904" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="IrBathroom" />
+          <inactive flag="ConvoTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Conversacion_Companera" guid="19a8fde6-afa7-4078-a445-4cceab7cb7dd" />
+              <condition>
+                <active flag="IrBathroom" />
+                <equals var="Gender" value="1" />
+              </condition>
+              <trigger-conversation idTarget="IrTrabajo" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
+              <condition>
+                <active flag="IrBathroom" />
+                <either>
+                  <equals var="Gender" value="-1" />
+                  <equals var="Gender" value="0" />
+                </either>
+              </condition>
+              <activate flag="ConvoTrabajo" guid="f68d4f81-6fb2-48bb-9e47-9a0dffbd01e5" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
   <scene id="Calle_Super" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
+      <asset type="bgmusic" uri="assets/audio/The_Verdant_Grove_LOOP.mp3" />
     </resources>
     <name>
     </name>
@@ -801,6 +908,7 @@
     <resources name="No name">
       <asset type="background" uri="assets/background/small_grocery_store_by_vui_huynh_dbhl2rf-fullview.jpg" />
       <asset type="foreground" uri="" />
+      <asset type="bgmusic" uri="assets/audio/The_Verdant_Grove_LOOP.mp3" />
     </resources>
     <name>
     </name>
@@ -864,6 +972,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
+      <asset type="bgmusic" uri="assets/audio/Beats C.mp3" />
     </resources>
     <name>
     </name>
@@ -883,6 +992,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/samuel-inkilainen-bar.jpg" />
+      <asset type="bgmusic" uri="assets/audio/Beats C.mp3" />
     </resources>
     <name>
     </name>
@@ -1558,6 +1668,50 @@
         <text>Si tienen algún problema, solucionenlo entre ustedes</text>
       </speak-char>
       <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="Convo_Jefe" guid="df809f1e-4cb7-402f-803f-4763b0ce82a3" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conv_Companero_PostJefe">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>Ves, la gente normal piensa lo mismo que yo</text>
+      </speak-char>
+      <condition>
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>Ves, la gente normal piensa lo mismo que yo</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="MaleCoworker">
+        <resources name="No name" />
+        <text>Estos dos no tienen ni idea, no dejes que te afecten</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="FemaleCoworker">
+        <resources name="No name" />
+        <text>Estos dos no tienen ni idea, no dejes que te afecten</text>
+      </speak-char>
+      <condition>
+        <either>
+          <equals var="Gender" value="-1" />
+          <equals var="Gender" value="0" />
+        </either>
+      </condition>
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
