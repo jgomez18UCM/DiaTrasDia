@@ -585,7 +585,7 @@
         <actions>
           <use needsGoTo="yes" keepDistance="35" not-effects="no">
             <effect>
-              <trigger-conversation idTarget="IrTrabajo" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
+              <trigger-conversation idTarget="Ir_Cama" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
               <condition />
             </effect>
           </use>
@@ -1014,7 +1014,7 @@
         <actions>
           <use needsGoTo="yes" keepDistance="35" not-effects="no">
             <effect>
-              <trigger-conversation idTarget="IrTrabajo" guid="ce6d1fc0-f3c9-44cc-a12e-d63cfe1803c6" />
+              <trigger-conversation idTarget="Salir_Bar" guid="ce6d1fc0-f3c9-44cc-a12e-d63cfe1803c6" />
               <condition />
             </effect>
           </use>
@@ -1065,7 +1065,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="892" editor-y="108">
+    <dialogue-node nodeindex="2" editor-x="865" editor-y="110">
       <speak-player>
         <resources name="No name" />
         <text>Si, voy a cambiarme</text>
@@ -1094,6 +1094,28 @@
         <text>Debería terminar de vestirme</text>
       </speak-player>
       <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="NoSalir">
+    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
+      <speak-player>
+        <resources name="No name" />
+        <text>No debería de salir de casa sin vestirme</text>
+      </speak-player>
+      <condition>
+        <equals var="Bottom" value="0" />
+        <equals var="Top" value="0" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>* Haz click en el perchero para vestirte *</text>
+      </speak-player>
+      <condition>
+        <equals var="Top" value="0" />
+        <equals var="Bottom" value="0" />
+        <inactive flag="ExitWork" />
+      </condition>
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
@@ -1171,28 +1193,6 @@
       </speak-char>
       <condition>
         <equals var="RespuestaConciudadano" value="2" />
-      </condition>
-      <end-conversation />
-    </dialogue-node>
-  </graph-conversation>
-  <graph-conversation id="NoSalir">
-    <dialogue-node nodeindex="0" editor-x="344" editor-y="58">
-      <speak-player>
-        <resources name="No name" />
-        <text>No debería de salir de casa sin vestirme</text>
-      </speak-player>
-      <condition>
-        <equals var="Bottom" value="0" />
-        <equals var="Top" value="0" />
-      </condition>
-      <speak-player>
-        <resources name="No name" />
-        <text>* Haz click en el perchero para vestirte *</text>
-      </speak-player>
-      <condition>
-        <equals var="Top" value="0" />
-        <equals var="Bottom" value="0" />
-        <inactive flag="ExitWork" />
       </condition>
       <end-conversation />
     </dialogue-node>
@@ -1779,7 +1779,7 @@
       <condition />
       <end-conversation>
         <effect>
-          <trigger-scene idTarget="Inicio" x="960" y="810" transitionTime="0" transitionType="0" guid="5436b91f-f959-43d8-b01f-a49ac6ab7b15" />
+          <trigger-scene idTarget="Creditos" x="960" y="810" transitionTime="0" transitionType="0" guid="5436b91f-f959-43d8-b01f-a49ac6ab7b15" />
           <condition />
         </effect>
       </end-conversation>
@@ -2152,4 +2152,5 @@
   <unity-scene id="MenuPersonalizacion" scene="Assets/Scenes/PersonalizationMenu.unity" />
   <unity-scene id="Maquillaje" scene="Assets/Scenes/Maquillar.unity" />
   <unity-scene id="MainMenu" scene="Assets/Scenes/Main Menu.unity" />
+  <unity-scene id="Creditos" scene="Assets/Scenes/Creditos.unity" />
 </eAdventure>
