@@ -1659,9 +1659,12 @@
         <text>Muchas gracias</text>
       </speak-player>
       <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="447" editor-y="102">
       <end-conversation>
         <effect>
-          <trigger-scene idTarget="MainMenu" x="960" y="810" transitionTime="0" transitionType="0" guid="4091bd7d-4413-411b-8268-720085ea6dbf" />
+          <activate flag="Coversacion_Bar" guid="d0bf37d9-a824-45db-af68-ca5adf55b7d9" />
           <condition />
         </effect>
       </end-conversation>
