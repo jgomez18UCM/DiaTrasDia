@@ -671,6 +671,7 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/7a8bdf35417955.56f60cdf335c6.png" />
+      <asset type="bgmusic" uri="assets/audio/Spinning_out_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
@@ -689,29 +690,12 @@
     </documentation>
     <resources name="No name">
       <asset type="background" uri="assets/background/Office_BG (30).png" />
+      <asset type="bgmusic" uri="assets/audio/Spinning_out_online-audio-converter.com.mp3" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="no" x="266" y="213" width="59" height="153" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <point x="266" y="213" />
-        <point x="306" y="215" />
-        <point x="325" y="354" />
-        <point x="290" y="366" />
-        <condition>
-          <active flag="IrBathroom" />
-        </condition>
-        <post-effect>
-          <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
-          <condition />
-          <trigger-conversation idTarget="IrSupermercado" guid="126f4676-676c-4b5e-8d52-d4c4b2f1fada" />
-          <condition />
-          <play-sound uri="assets/audio/Ludum Dare 38 - Track 1.mp3" guid="5b6bfa09-633e-4b8f-ac4d-acd721c566bc" />
-          <condition />
-        </post-effect>
-      </exit>
       <exit rectangular="yes" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <effect>
@@ -829,13 +813,6 @@
           <trigger-conversation idTarget="IrSupermercado" guid="126f4676-676c-4b5e-8d52-d4c4b2f1fada" />
           <condition />
         </post-effect>
-      </exit>
-      <exit rectangular="yes" x="1003" y="54" width="191" height="513" hasInfluenceArea="no" idTarget="WorkBathroom" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
-        <exit-look text="" cursor-path="" sound-path="" />
-        <effect>
-          <activate flag="IsInBathroom" guid="7bcfaaa8-986a-4582-a904-5fa7dc04a405" />
-          <condition />
-        </effect>
       </exit>
     </exits>
     <characters>
