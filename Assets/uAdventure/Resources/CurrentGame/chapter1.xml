@@ -920,7 +920,7 @@
                 <active flag="IrBathroom" />
                 <equals var="Gender" value="1" />
               </condition>
-              <trigger-conversation idTarget="Conversacion_Previa_Companero" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
+              <trigger-conversation idTarget="Conversacion_Companero" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
               <condition>
                 <active flag="IrBathroom" />
                 <either>
@@ -1660,7 +1660,6 @@
           <equals var="Gender" value="0" />
         </either>
         <equals var="Pronouns" value="0" />
-        <active flag="IrBathroom" />
       </condition>
       <speak-char idTarget="FemaleCoworker">
         <resources name="No name" />
@@ -1865,6 +1864,13 @@
       <condition>
         <equals var="Gender" value="-1" />
       </condition>
+      <speak-char idTarget="Friend1">
+        <resources name="No name" />
+        <text>Hola tío... tía, !Joder!, ¿como me refiero a ti?</text>
+      </speak-char>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
       <speak-char idTarget="Friend2">
         <resources name="No name" />
         <text>Siempre igual, Pablo</text>
@@ -2041,10 +2047,8 @@
         <text>No soy una chica,  soy un hombre</text>
       </speak-player>
       <condition>
-        <either>
-          <greater-than var="Gender" value="0" />
-          <less-than var="Presentacion" value="0" />
-        </either>
+        <greater-than var="Gender" value="0" />
+        <less-than var="Presentacion" value="0" />
       </condition>
       <child nodeindex="3" />
       <speak-player>
@@ -2052,10 +2056,8 @@
         <resources name="No name" />
       </speak-player>
       <condition>
-        <either>
-          <less-than var="Gender" value="0" />
-          <greater-than var="Presentacion" value="0" />
-        </either>
+        <less-than var="Gender" value="0" />
+        <greater-than var="Presentacion" value="0" />
       </condition>
       <child nodeindex="4" />
       <speak-player>
@@ -2275,7 +2277,7 @@
       </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <dialogue-node nodeindex="1" editor-x="345" editor-y="75">
+    <dialogue-node nodeindex="1" editor-x="557" editor-y="43">
       <speak-player>
         <resources name="No name" />
         <text>Madre mía, como está el percal</text>
@@ -2301,21 +2303,21 @@
         <text>#O Estoy cansado, debería de volver a casa.</text>
       </speak-player>
       <condition>
-        <equals var="Pronouns" value="1" />
+        <equals var="Gender" value="1" />
       </condition>
       <speak-player>
         <resources name="No name" />
         <text>#O Estoy cansada, debería de volver  a casa.</text>
       </speak-player>
       <condition>
-        <equals var="Pronouns" value="-1" />
+        <equals var="Gender" value="-1" />
       </condition>
       <speak-player>
         <resources name="No name" />
         <text>#O Estoy cansade, debería de volver a casa.</text>
       </speak-player>
       <condition>
-        <equals var="Pronouns" value="0" />
+        <equals var="Gender" value="0" />
       </condition>
       <end-conversation>
         <effect>
