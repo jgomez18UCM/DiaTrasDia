@@ -3,8 +3,8 @@
 <comment> Project Configuration </comment>
 <entry key="Chapter0.Casa.X">863</entry>
 <entry key="Chapter0.Casa.Y">169</entry>
-<entry key="Chapter0.Trabajo.X">44</entry>
-<entry key="Chapter0.Trabajo.Y">-22</entry>
+<entry key="Chapter0.Trabajo.X">-110</entry>
+<entry key="Chapter0.Trabajo.Y">-104</entry>
 <entry key="Chapter0.Calle.X">385</entry>
 <entry key="Chapter0.Calle.Y">-23</entry>
 <entry key="Chapter0.Ropa.X">763</entry>
@@ -33,5 +33,9 @@
 <entry key="Chapter0.WorkBathroom.Y">21</entry>
 <entry key="Chapter0.Calle_Bar.X">395</entry>
 <entry key="Chapter0.Calle_Bar.Y">397</entry>
+<entry key="Chapter0.Trabajo1.X">249</entry>
+<entry key="Chapter0.Trabajo1.Y">205</entry>
+<entry key="Chapter0.Casa1.X">174</entry>
+<entry key="Chapter0.Casa1.Y">77</entry>
 </properties>
 

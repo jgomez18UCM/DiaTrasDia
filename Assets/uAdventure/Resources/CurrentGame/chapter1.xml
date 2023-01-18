@@ -387,8 +387,21 @@
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Created with target conversation: Conversacion_Amigo</documentation>
+        <condition>
+          <inactive flag="ConversaciónAmigos" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Amigo1" guid="ce5b9aaa-0213-453d-9f28-6331ce7da7a0" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversation_Amigo2</documentation>
+        <condition>
+          <active flag="ConversaciónAmigos" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversation_Amigo2" guid="0f806c20-de77-43ee-9a48-ea2e9ef26d56" />
           <condition />
         </effect>
       </talk-to>
@@ -426,8 +439,20 @@
     <voice name="" synthesizeAlways="no" />
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <inactive flag="ConversaciónAmigos" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Amigo1" guid="5112e102-15f6-4a57-bcc3-d103d8a9aff0" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="ConversaciónAmigos" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversation_Amigo2" guid="78f26649-1570-4e7a-a565-984f6b969d39" />
           <condition />
         </effect>
       </talk-to>
@@ -514,7 +539,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="-6" y="956" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+      <exit rectangular="yes" x="-6" y="950" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
         <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
         <not-effect>
           <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
@@ -544,7 +569,7 @@
           </use>
         </actions>
       </active-area>
-      <active-area id="IrTrabajoArea" rectangular="yes" x="3" y="-2" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="IrTrabajoArea" rectangular="yes" x="3" y="-17" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <inactive flag="ConversacionIrTrabajo" />
         </condition>
@@ -570,7 +595,7 @@
           </custom>
         </actions>
       </active-area>
-      <active-area id="IrCama" rectangular="yes" x="-5" y="0" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="IrCama" rectangular="yes" x="-4" y="1" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <active flag="Coversacion_Bar" />
         </condition>
@@ -604,13 +629,14 @@
     </name>
     <default-initial-position x="400" y="450" />
     <objects>
-      <object-ref idTarget="Tshirt" x="70" y="141" scale="0.06557313" glow="no" layer="3" hasInfluenceArea="no" />
+      <object-ref idTarget="Tshirt" x="70" y="141" scale="0.06557313" glow="no" layer="4" hasInfluenceArea="no" />
       <object-ref idTarget="Mannequin" x="298" y="338" scale="0.6011338" glow="no" layer="0" hasInfluenceArea="no" />
-      <object-ref idTarget="TShirtWhite" x="190" y="138" scale="0.1698477" glow="no" layer="4" hasInfluenceArea="no" />
-      <object-ref idTarget="TShirtDare" x="67" y="266" scale="0.3023721" glow="no" layer="5" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtWhite" x="190" y="138" scale="0.1698477" glow="no" layer="5" hasInfluenceArea="no" />
+      <object-ref idTarget="TShirtDare" x="67" y="266" scale="0.3023721" glow="no" layer="6" hasInfluenceArea="no" />
       <object-ref idTarget="Skirt" x="419" y="119" scale="0.189228" glow="no" layer="1" hasInfluenceArea="no" />
       <object-ref idTarget="Pants" x="522" y="168" scale="0.13624" glow="no" layer="2" hasInfluenceArea="no" />
-      <object-ref idTarget="RopaArrow" x="532" y="361" scale="0.3247602" glow="no" layer="6" hasInfluenceArea="no" />
+      <object-ref idTarget="RopaArrow" x="532" y="361" scale="0.3247602" glow="no" layer="7" hasInfluenceArea="no" />
+      <object-ref idTarget="WomenTop" x="184" y="253" scale="0.07073075" glow="no" layer="3" hasInfluenceArea="no" />
     </objects>
   </scene>
   <scene id="Pasillo" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
@@ -626,6 +652,32 @@
     <exits>
       <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <inactive flag="ExitWork" />
+        </condition>
+      </exit>
+      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa1" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ExitWork" />
+          <inactive flag="ExitMarket" />
+        </condition>
+      </exit>
+      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa2" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ExitWork" />
+          <active flag="ExitMarket" />
+          <inactive flag="Coversacion_Bar" />
+        </condition>
+      </exit>
+      <exit rectangular="yes" x="394" y="62" width="208" height="426" hasInfluenceArea="no" idTarget="Casa3" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+        <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ExitWork" />
+          <active flag="ExitMarket" />
+          <active flag="Coversacion_Bar" />
+        </condition>
       </exit>
       <exit rectangular="yes" x="258" y="165" width="49" height="249" hasInfluenceArea="no" idTarget="Bano" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
@@ -756,7 +808,7 @@
                 <active flag="IrBathroom" />
                 <equals var="Gender" value="1" />
               </condition>
-              <trigger-conversation idTarget="IrTrabajo" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
+              <trigger-conversation idTarget="Conversacion_Companero" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
               <condition>
                 <active flag="IrBathroom" />
                 <either>
@@ -819,14 +871,14 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="no" x="266" y="213" width="59" height="153" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="no" x="266" y="213" width="59" height="153" hasInfluenceArea="no" idTarget="Casa1" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <point x="266" y="213" />
         <point x="306" y="215" />
         <point x="325" y="354" />
         <point x="290" y="366" />
         <condition>
-          <active flag="IrBathroom" />
+          <active flag="ExitWork" />
         </condition>
         <post-effect>
           <activate flag="ExitWork" guid="f52b413d-30be-4ddf-b288-e813b26e3154" />
@@ -847,7 +899,7 @@
       </character-ref>
     </characters>
     <active-areas>
-      <active-area id="Convo-497" rectangular="yes" x="-1" y="-4" width="1605" height="904" hasInfluenceArea="no" behaviour="first-action">
+      <active-area id="Convo-497" rectangular="yes" x="0" y="0" width="1605" height="904" hasInfluenceArea="no" behaviour="first-action">
         <condition>
           <active flag="IrBathroom" />
           <inactive flag="ConvoTrabajo" />
@@ -868,7 +920,7 @@
                 <active flag="IrBathroom" />
                 <equals var="Gender" value="1" />
               </condition>
-              <trigger-conversation idTarget="IrTrabajo" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
+              <trigger-conversation idTarget="Conversacion_Previa_Companero" guid="2e92dbfa-c4c5-4945-93e1-2a1a43a7953c" />
               <condition>
                 <active flag="IrBathroom" />
                 <either>
@@ -912,7 +964,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <exits>
-      <exit rectangular="yes" x="794" y="449" width="107" height="57" hasInfluenceArea="no" idTarget="Casa" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
+      <exit rectangular="yes" x="794" y="449" width="107" height="57" hasInfluenceArea="no" idTarget="Casa2" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
         <condition>
           <active flag="ConversacionCajeroSuper" />
@@ -978,6 +1030,9 @@
     <exits>
       <exit rectangular="yes" x="317" y="416" width="208" height="81" hasInfluenceArea="no" idTarget="Bar" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="no">
         <exit-look text="" cursor-path="" sound-path="" />
+        <condition>
+          <active flag="ConversaciónAmigos" />
+        </condition>
       </exit>
     </exits>
     <characters>
@@ -1015,6 +1070,276 @@
           <use needsGoTo="yes" keepDistance="35" not-effects="no">
             <effect>
               <trigger-conversation idTarget="Salir_Bar" guid="ce6d1fc0-f3c9-44cc-a12e-d63cfe1803c6" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <scene id="Casa1" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="">
+      <asset type="background" uri="assets/background/Bedroom_Evening.png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="-6" y="950" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+        <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
+          <condition />
+        </not-effect>
+      </exit>
+    </exits>
+    <objects>
+      <object-ref idTarget="DownArrow" x="975" y="1072" scale="0.5136824" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <active-areas>
+      <active-area id="IrRopa-632" rectangular="yes" x="1160" y="265" width="226" height="282" hasInfluenceArea="no" behaviour="first-action">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="MenuEspejo" guid="e0a116ca-80b7-4141-8543-d709fc5c6374" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+      <active-area id="IrTrabajoArea-632" rectangular="yes" x="3" y="-17" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <inactive flag="ConversacionIrTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <custom name="Conversacion" needsGoTo="no" keepDistance="0" not-effects="no">
+            <resources name="No name">
+              <asset type="buttonNormal" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonOver" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonPressed" uri="assets/special/EmptyAnimation" />
+            </resources>
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="79c515c1-9de8-4607-955b-5526594cac61" />
+              <condition />
+            </effect>
+          </custom>
+        </actions>
+      </active-area>
+      <active-area id="IrCama-632" rectangular="yes" x="-4" y="1" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="Coversacion_Bar" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Ir_Cama" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <scene id="Casa2" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="">
+      <asset type="background" uri="assets/background/Bedroom_Night.png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="-6" y="950" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+        <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
+          <condition />
+        </not-effect>
+      </exit>
+    </exits>
+    <objects>
+      <object-ref idTarget="DownArrow" x="975" y="1072" scale="0.5136824" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <active-areas>
+      <active-area id="IrRopa-632-610" rectangular="yes" x="1160" y="265" width="226" height="282" hasInfluenceArea="no" behaviour="first-action">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="MenuEspejo" guid="e0a116ca-80b7-4141-8543-d709fc5c6374" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+      <active-area id="IrTrabajoArea-632-610" rectangular="yes" x="3" y="-17" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <inactive flag="ConversacionIrTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <custom name="Conversacion" needsGoTo="no" keepDistance="0" not-effects="no">
+            <resources name="No name">
+              <asset type="buttonNormal" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonOver" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonPressed" uri="assets/special/EmptyAnimation" />
+            </resources>
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="79c515c1-9de8-4607-955b-5526594cac61" />
+              <condition />
+            </effect>
+          </custom>
+        </actions>
+      </active-area>
+      <active-area id="IrCama-632-610" rectangular="yes" x="-4" y="1" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="Coversacion_Bar" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Ir_Cama" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <scene id="Casa3" hideInventory="yes" allowsZoom="no" allowsSavingGame="yes" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="">
+      <asset type="background" uri="assets/background/Bedroom_Night_Dark.png" />
+      <asset type="bgmusic" uri="assets/audio/Ludum_Dare_32_-_Track_2_online-audio-converter.com.mp3" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <exits>
+      <exit rectangular="yes" x="-6" y="950" width="1936" height="126" hasInfluenceArea="no" idTarget="Pasillo" destinyY="-2147483648" destinyX="-2147483648" destinyScale="1" transitionType="0" transitionTime="0" not-effects="yes">
+        <exit-look text="" cursor-path="assets/special/EmptyIcon.png" sound-path="" />
+        <not-effect>
+          <trigger-conversation idTarget="NoSalir" guid="5a1b3040-603b-4ee9-b337-6e7ab360df73" />
+          <condition />
+        </not-effect>
+      </exit>
+    </exits>
+    <objects>
+      <object-ref idTarget="DownArrow" x="975" y="1072" scale="0.5136824" glow="no" layer="0" hasInfluenceArea="no" />
+    </objects>
+    <active-areas>
+      <active-area id="IrRopa-632-610-30" rectangular="yes" x="1160" y="265" width="226" height="282" hasInfluenceArea="no" behaviour="first-action">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="MenuEspejo" guid="e0a116ca-80b7-4141-8543-d709fc5c6374" />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+      <active-area id="IrTrabajoArea-632-610-30" rectangular="yes" x="3" y="-17" width="1935" height="1099" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <inactive flag="ConversacionIrTrabajo" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <custom name="Conversacion" needsGoTo="no" keepDistance="0" not-effects="no">
+            <resources name="No name">
+              <asset type="buttonNormal" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonOver" uri="assets/special/EmptyAnimation" />
+              <asset type="buttonPressed" uri="assets/special/EmptyAnimation" />
+            </resources>
+            <effect>
+              <trigger-conversation idTarget="IrTrabajo" guid="79c515c1-9de8-4607-955b-5526594cac61" />
+              <condition />
+            </effect>
+          </custom>
+        </actions>
+      </active-area>
+      <active-area id="IrCama-632-610-30" rectangular="yes" x="-4" y="1" width="1938" height="1102" hasInfluenceArea="no" behaviour="first-action">
+        <condition>
+          <active flag="Coversacion_Bar" />
+        </condition>
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="Ir_Cama" guid="c4ef22da-8bf5-4d21-a633-23b0c857975b" />
               <condition />
             </effect>
           </use>
@@ -1525,7 +1850,7 @@
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Amigo1">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+    <dialogue-node nodeindex="0" editor-x="21" editor-y="49">
       <speak-char idTarget="Friend1">
         <resources name="No name" />
         <text>Hola tía... tío, ¡Joder! </text>
@@ -1552,7 +1877,7 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="520" editor-y="50" x="520" y="50">
+    <option-node nodeindex="1" preListening="yes" editor-x="439" editor-y="44" x="439" y="44">
       <speak-player>
         <text>No pasa nada, Ana.</text>
         <resources name="No name" />
@@ -1566,7 +1891,7 @@
       <condition />
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="963" editor-y="83">
+    <dialogue-node nodeindex="2" editor-x="930" editor-y="21">
       <speak-player>
         <resources name="No name" />
         <text>No pasa nada Ana.</text>
@@ -1577,9 +1902,14 @@
         <text>A veces cuesta hacerse a ello</text>
       </speak-player>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversaciónAmigos" guid="a7c56cfd-9bfa-4e5c-8a61-5cea1398beee" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="928" editor-y="274">
+    <dialogue-node nodeindex="3" editor-x="929" editor-y="237">
       <speak-player>
         <resources name="No name" />
         <text>Ya va siendo hora de que te acostumbres, Pablo.</text>
@@ -1590,7 +1920,12 @@
         <text>Que ya han pasado varios años.</text>
       </speak-player>
       <condition />
-      <end-conversation />
+      <end-conversation>
+        <effect>
+          <activate flag="ConversaciónAmigos" guid="24e2fb51-45c9-4dde-9c0e-4e2fdf0ff905" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Maquillarse">
@@ -1638,30 +1973,232 @@
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Conversacion_Bar">
-    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+    <dialogue-node nodeindex="0" editor-x="0" editor-y="420">
       <speak-char idTarget="BarPerson">
         <resources name="No name" />
-        <text>Hola buenas, ¿qué quería?</text>
+        <text>Hey, ¿que tal?</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Póngame una cerveza, por favor</text>
+        <text>Muy bien</text>
       </speak-player>
       <condition />
       <speak-char idTarget="BarPerson">
         <resources name="No name" />
-        <text>Aquí tiene</text>
+        <text>¿Como te llamas?</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Muchas gracias</text>
+        <text>Alejandra, ¿y tú?</text>
       </speak-player>
-      <condition />
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Alejandro, ¿y tú?</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Alex, ¿y tú?</text>
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
       <child nodeindex="1" />
     </dialogue-node>
-    <dialogue-node nodeindex="1" editor-x="447" editor-y="102">
+    <dialogue-node nodeindex="1" editor-x="332" editor-y="478">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Anda, que nombre más raro para un chico</text>
+      </speak-char>
+      <condition>
+        <greater-than var="Presentacion" value="0" />
+        <not-equals var="Gender" value="1" />
+      </condition>
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Anda, que nombre más raro para una chica</text>
+      </speak-char>
+      <condition>
+        <less-than var="Presentacion" value="0" />
+        <not-equals var="Gender" value="-1" />
+      </condition>
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Yo me llamo Carlos</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <option-node nodeindex="2" preListening="yes" editor-x="902" editor-y="484" x="902" y="484">
+      <speak-player>
+        <text>No soy una chica,  soy un hombre</text>
+      </speak-player>
+      <condition>
+        <either>
+          <greater-than var="Gender" value="0" />
+          <less-than var="Presentacion" value="0" />
+        </either>
+      </condition>
+      <child nodeindex="3" />
+      <speak-player>
+        <text>No soy un chico, soy una mujer</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <either>
+          <less-than var="Gender" value="0" />
+          <greater-than var="Presentacion" value="0" />
+        </either>
+      </condition>
+      <child nodeindex="4" />
+      <speak-player>
+        <text>No soy un chico, soy una persona no binaria</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="0" />
+        <greater-than var="Presentacion" value="0" />
+      </condition>
+      <child nodeindex="5" />
+      <speak-player>
+        <text>No soy una chica, soy una persona no binaria</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="0" />
+        <less-than var="Presentacion" value="0" />
+      </condition>
+      <child nodeindex="6" />
+      <speak-player>
+        <text>Encantade de conocerte, Carlos</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="0" />
+      </condition>
+      <child nodeindex="7" />
+      <speak-player>
+        <text>Encantado de conocerte, Carlos</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="1" />
+      </condition>
+      <child nodeindex="8" />
+      <speak-player>
+        <text>Encantada de conocerte, Carlos</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <equals var="Gender" value="-1" />
+      </condition>
+      <child nodeindex="9" />
+    </option-node>
+    <dialogue-node nodeindex="3" editor-x="1380" editor-y="1">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Bueno, perdona por asumir </text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Es que, por como vas vestida, pensaba que eras mujer</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1383" editor-y="204">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Bueno, perdona por asumir </text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Es que, por como vas vestido, pensaba que eras hombre</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="1380" editor-y="401">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Bueno, perdona por asumir </text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>La verdad es que ni se que es eso</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1366" editor-y="597">
+      <speak-player>
+        <resources name="No name" />
+        <text>Bueno, perdona por asumir </text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>La verdad es que ni se que es eso</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="10" />
+    </dialogue-node>
+    <dialogue-node nodeindex="7" editor-x="1390" editor-y="801">
+      <speak-player>
+        <resources name="No name" />
+        <text>Bueno, voy a echar un billar con mis amigos, nos vemos luego</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="11" />
+    </dialogue-node>
+    <dialogue-node nodeindex="8" editor-x="1371" editor-y="1010">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Bueno, voy a echar un billar con mis amigos, nos vemos luego</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="11" />
+    </dialogue-node>
+    <dialogue-node nodeindex="9" editor-x="1381" editor-y="1200">
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>#O ¿Encantade?</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="BarPerson">
+        <resources name="No name" />
+        <text>Bueno, voy a echar un billar con mis amigos, nos vemos luego</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="11" />
+    </dialogue-node>
+    <dialogue-node nodeindex="10" editor-x="1720" editor-y="342">
+      <speak-player>
+        <resources name="No name" />
+        <text>...</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="12" />
+    </dialogue-node>
+    <dialogue-node nodeindex="11" editor-x="1823" editor-y="870">
+      <speak-player>
+        <resources name="No name" />
+        <text>¡Chao!</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="12" />
+    </dialogue-node>
+    <dialogue-node nodeindex="12" editor-x="2126" editor-y="610">
       <end-conversation>
         <effect>
           <activate flag="Coversacion_Bar" guid="d0bf37d9-a824-45db-af68-ca5adf55b7d9" />
@@ -1736,7 +2273,25 @@
           <equals var="Gender" value="0" />
         </either>
       </condition>
-      <end-conversation />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="345" editor-y="75">
+      <speak-player>
+        <resources name="No name" />
+        <text>Madre mía, como está el percal</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Menos mal que es la hora de salir, me voy a casa</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="ExitWork" guid="a6c60541-19a0-49e8-9039-1f6fde2d8cc9" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="Salir_Bar">
@@ -1764,7 +2319,7 @@
       </condition>
       <end-conversation>
         <effect>
-          <trigger-scene idTarget="Casa" x="960" y="810" transitionTime="0" transitionType="5" guid="15e992bd-1815-4a3b-96e2-e25c42967440" />
+          <trigger-scene idTarget="Casa3" x="960" y="810" transitionTime="0" transitionType="5" guid="15e992bd-1815-4a3b-96e2-e25c42967440" />
           <condition />
         </effect>
       </end-conversation>
@@ -1783,6 +2338,21 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversation_Amigo2">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="Friend1">
+        <resources name="No name" />
+        <text>Bueno venga, vamos tirando para el bar que hay ganas.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Friend2">
+        <resources name="No name" />
+        <text>Si, vamos</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="RopaArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
@@ -1858,6 +2428,8 @@
           <condition>
             <not-equals var="Top" value="0" />
           </condition>
+          <increment var="Presentacion" value="1" guid="ef3ef03a-d121-407d-9dcb-e0534f9806c7" />
+          <condition />
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -1867,12 +2439,14 @@
         <effect>
           <move-object idTarget="Tshirt" x="70" y="141" scale="0.06557313" animated="no" translateSpeed="1" scaleSpeed="1" guid="f3b5d016-8e75-46ef-bcae-3d1dd959f269" />
           <condition>
-            <not-equals var="Bottom" value="0" />
+            <not-equals var="Top" value="0" />
           </condition>
           <set-value var="Top" value="0" guid="9e1b3f56-202b-4d7a-923b-0fdaacb7f4a7" />
           <condition>
-            <not-equals var="Bottom" value="0" />
+            <not-equals var="Top" value="0" />
           </condition>
+          <decrement var="Presentacion" value="1" guid="1c94be54-80cb-4cff-9795-bda8672b004a" />
+          <condition />
         </effect>
       </use>
     </actions>
@@ -1904,6 +2478,8 @@
           <condition>
             <not-equals var="Top" value="0" />
           </condition>
+          <increment var="Presentacion" value="1" guid="0ca01299-355d-4108-8504-d5e319499233" />
+          <condition />
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -1919,6 +2495,8 @@
           <condition>
             <not-equals var="Top" value="0" />
           </condition>
+          <decrement var="Presentacion" value="1" guid="8155bdb3-275f-4b90-93c4-f65cc0592353" />
+          <condition />
         </effect>
       </use>
     </actions>
@@ -1969,6 +2547,52 @@
       </use>
     </actions>
   </object>
+  <object id="WomenTop" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Top.png" />
+      <asset type="icon" uri="assets/icon/Top.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <equals var="Top" value="0" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="1" guid="3ae9cc41-9938-4682-9282-411ba5032f45" />
+          <condition>
+            <equals var="Top" value="0" />
+          </condition>
+          <move-object idTarget="WomenTop" x="292" y="158" scale="0.07073075" animated="no" translateSpeed="1" scaleSpeed="1" guid="b774ad5f-7920-4b57-a541-cd2891da3354" />
+          <condition />
+          <decrement var="Presentacion" value="1" guid="e7972890-53bb-4d43-b098-c579da048aad" />
+          <condition />
+        </effect>
+      </use>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <equals var="Top" value="1" />
+        </condition>
+        <effect>
+          <set-value var="Top" value="0" guid="c8fa85fa-a974-456a-9582-68576258b8b5" />
+          <condition>
+            <equals var="Top" value="1" />
+          </condition>
+          <move-object idTarget="WomenTop" x="184" y="253" scale="0.07073075" animated="no" translateSpeed="1" scaleSpeed="1" guid="7453f554-89bd-4392-aa36-a96095ad5c35" />
+          <condition />
+          <increment var="Presentacion" value="1" guid="664e3367-59f6-467e-87f0-1b2197f81a50" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
   <object id="Skirt" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/Short-Skirt-PNG.png" />
@@ -1996,6 +2620,8 @@
           <condition>
             <not-equals var="Bottom" value="0" />
           </condition>
+          <decrement var="Presentacion" value="1" guid="6ae50377-8c93-46e4-bdd7-63284436769c" />
+          <condition />
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -2011,6 +2637,8 @@
           <condition>
             <not-equals var="Bottom" value="0" />
           </condition>
+          <increment var="Presentacion" value="1" guid="3de811da-9d2c-467a-990e-88fd795b4169" />
+          <condition />
         </effect>
       </use>
     </actions>
@@ -2042,6 +2670,8 @@
           <condition>
             <not-equals var="Bottom" value="0" />
           </condition>
+          <increment var="Presentacion" value="1" guid="f5913284-9fa9-4db0-a35e-52cbcff5944c" />
+          <condition />
         </effect>
       </use>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
@@ -2057,6 +2687,8 @@
           <condition>
             <not-equals var="Bottom" value="0" />
           </condition>
+          <decrement var="Presentacion" value="1" guid="ecb5da9f-8b72-4769-8bce-a35bc89ff839" />
+          <condition />
         </effect>
       </use>
     </actions>

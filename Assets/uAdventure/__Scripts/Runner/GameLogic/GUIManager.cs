@@ -11,7 +11,7 @@ namespace uAdventure.Runner
     public class GUIManager : MonoBehaviour
     {
         public GameObject Bubble_Prefab, Think_Prefab, Yell_Prefab, Config_Menu_Ref;
-        public GameObject SaveButton, LoadButton, ResetButton;
+        GameObject SaveButton, LoadButton, ResetButton;
         public GameObject AudioSlider; 
 
         private static GUIManager instance;
@@ -60,9 +60,9 @@ namespace uAdventure.Runner
                 started = true;
                 guiprovider = new GUIProvider(gs.Data);
 
-                SaveButton.SetActive(gs.Data.isShowSaveLoad());
-                LoadButton.SetActive(gs.Data.isShowSaveLoad());
-                ResetButton.SetActive(gs.Data.isShowReset());
+                //SaveButton.SetActive(gs.Data.isShowSaveLoad());
+                //LoadButton.SetActive(gs.Data.isShowSaveLoad());
+                //ResetButton.SetActive(gs.Data.isShowReset());
 
                 if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
                 {
